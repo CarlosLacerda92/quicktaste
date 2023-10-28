@@ -19,4 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+#   Criação de novos usuários.
 Route::post('/criarUsuario', [UsuarioController::class, 'criarUsuario']);
+
+#   Exibir todos os usuários criados.
+Route::get('/exibirTodosUsuarios', [UsuarioController::class, 'exibirTodosUsuarios']);

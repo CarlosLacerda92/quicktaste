@@ -10,12 +10,17 @@ use App\Http\Resources\UsuarioResource;
 
 class UsuarioController extends Controller {
 
+    /**
+     * @param CadastroAtualizacaoUsuarioRequest $request.
+     * @return UsuarioResource $usuario.
+     * @access public
+     */
     public function criarUsuario(CadastroAtualizacaoUsuarioRequest $request) {
 
-        #   Pega apenas o que foi validado pelo CadastroAtualizacaoUsuarioRequest, ignorando dados "extras".
+        #   Pega apenas o que foi validado pelo CadastroAtualizacaoUsuarioRequest, ignorando dados "extras" e/ou preenchidos incorretamente.
         $dados = $request->validated();
 
-        #   Criptografa a senha.
+        #   Criptografa a senha antes de enviá-la para a base de dados.
         $dados['senha'] = bcrypt($dados['senha']);
 
         #   Insere o registro na tabela USUARIOS.
@@ -25,20 +30,14 @@ class UsuarioController extends Controller {
         return new UsuarioResource($usuario);
     }
 
-    public function login(Request $request) {
+    /**
+     * @return UsuarioResource $usuarios.
+     * @access public
+     */
+    public function exibirTodosUsuarios() {
 
-        #   Validação dos campos informados pelo usuário para login.
-        $campos = $request->validate([
-            'name'     => ['required', 'min:3', 'max:255'],
-            'email'    => ['required', 'email', 'max:255'],
-            'password' => ['required', 'min:8', 'max:255']
-        ]);
+        $usuarios = Usuario::all();
 
-        #   Criptografando a senha do usuário antes de salvá-la.
-        $campos['password'] = bcrypt($campos['password']);
-        
-        //User::create($campos);
-
-        return 'Usuário logado com sucesso!';
+        return UsuarioResource::collection($usuarios);
     }
 }
