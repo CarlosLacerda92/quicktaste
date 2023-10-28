@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+#   Rotas criadas apenas para criação rápida de usuários da plataforma.
+
+Route::get('/criarTeste', function () {
+    return view('login.criarTeste');
 });
+
+Route::post('/criarTeste', [UsuarioController::class, 'criarTeste']);
+
+#   Fim das rotas de teste.
+
+Route::get('/', function () {
+    return view('login.login');
+});
+
+Route::post('/entrar', [UsuarioController::class, 'criar']);
