@@ -2,32 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CadastroAtualizacaoUsuarioRequest;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Resources\UsuarioResource;
 
 class UsuarioController extends Controller {
 
-    public function criarTeste(Request $request) {
+    public function criarUsuario(CadastroAtualizacaoUsuarioRequest $request) {
 
-        #   Validação dos campos informados pelo usuário para login.
-        $campos = $request->validate([
-            'email' => ['required', 'email', 'min:5', 'max:100'],
-            'senha' => ['required', 'min:8', 'max:500'],
-            'nome'  => ['required', 'min:3', 'max:100'],
-        ]);
+        #   Pega apenas o que foi validado pelo CadastroAtualizacaoUsuarioRequest, ignorando dados "extras".
+        $dados = $request->validated();
 
-        #   Verificar antes se o e-mail informado já existe na base de dados.
-        //  to do code...
+        #   Criptografa a senha.
+        $dados['senha'] = bcrypt($dados['senha']);
 
-        $Usuario        = new Usuario();
-        $Usuario->email = Hash::make($campos['email']);
-        $Usuario->senha = Hash::make($campos['senha']);
-        $Usuario->nome  = $campos['nome'];    
-    
-        $Usuario->save();
+        #   Insere o registro na tabela USUARIOS.
+        $usuario = Usuario::create($dados);
 
-        return 'Usuário criado com sucesso!';
+        #   Retorna os dados do usuário cadastrado de acordo com o formato estabelecido em UsuarioResource.
+        return new UsuarioResource($usuario);
     }
 
     public function login(Request $request) {
@@ -44,6 +39,6 @@ class UsuarioController extends Controller {
         
         //User::create($campos);
 
-        return 'Usuário criado com sucesso!';
+        return 'Usuário logado com sucesso!';
     }
 }

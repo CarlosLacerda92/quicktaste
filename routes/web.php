@@ -16,11 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 #   Rotas criadas apenas para criação rápida de usuários da plataforma.
 
-Route::get('/criarTeste', function () {
+/* Route::get('/criarTeste', function () {
     return view('login.criarTeste');
-});
+}); */
 
-Route::post('/criarTeste', [UsuarioController::class, 'criarTeste']);
+//Route::post('/criarTeste', [UsuarioController::class, 'criarTeste']);
 
 #   Fim das rotas de teste.
 
@@ -28,4 +28,4 @@ Route::get('/', function () {
     return view('login.login');
 });
 
-Route::post('/entrar', [UsuarioController::class, 'criar']);
+//Route::post('/entrar', [UsuarioController::class, 'criar']);
