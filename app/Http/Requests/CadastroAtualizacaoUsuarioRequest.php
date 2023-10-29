@@ -32,7 +32,7 @@ class CadastroAtualizacaoUsuarioRequest extends FormRequest
             ],
             'senha' => [
                 'required',
-                'min:8',
+                'min:6',
                 'max:255'
             ]
         ];

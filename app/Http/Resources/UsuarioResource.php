@@ -18,8 +18,8 @@ class UsuarioResource extends JsonResource
     {
         return [
             'id'   => $this->id,
-            'nome' => $this->nome,
-            'email'=> Crypt::decrypt($this->email)
+            'nome' => $this->nome
+            /* 'email'=> sha1(sha1($this->email)) */
         ];
     }
 }

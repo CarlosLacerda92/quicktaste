@@ -22,7 +22,7 @@ class UsuarioController extends Controller {
         $dados = $request->validated();
 
         #   Criptografa o e-mail antes de enviá-lo para a base de dados.
-        $dados['email'] = Crypt::encrypt($dados['email']);
+        $dados['email'] = sha1($dados['email']);
 
         #   Criptografa a senha antes de enviá-la para a base de dados.
         $dados['senha'] = bcrypt($dados['senha']);
