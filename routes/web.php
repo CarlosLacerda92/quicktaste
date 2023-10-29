@@ -15,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login.login');
+    return view('login');
+});
+
+Route::get('/restaurantes', function () {
+    return view('index');
 });
