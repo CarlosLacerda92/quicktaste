@@ -6,11 +6,12 @@ use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Crypt;
+use App\Http\Requests\AutenticacaoRequest;
 use Illuminate\Validation\ValidationException;
 
 class AutenticacaoController extends Controller
 {
-    public function autenticar(Request $request) {
+    public function autenticar(AutenticacaoRequest $request) {
 
         #   Verifica se o e-mail fornecido existe na base de dados.
         $usuario = Usuario::where('email', sha1($request->email))->first();

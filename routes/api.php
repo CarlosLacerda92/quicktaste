@@ -27,9 +27,3 @@ Route::middleware(['auth:sanctum'])->group(function() {
     Route::post('/criarUsuario', [UsuarioController::class, 'criarUsuario']);
     Route::get('/exibirTodosUsuarios', [UsuarioController::class, 'exibirTodosUsuarios']);
 });
-
-/* #   Criação de novos usuários.
-Route::post('/criarUsuario', [UsuarioController::class, 'criarUsuario']);
-
-#   Exibir todos os usuários criados.
-Route::get('/exibirTodosUsuarios', [UsuarioController::class, 'exibirTodosUsuarios']); */
