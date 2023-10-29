@@ -27,7 +27,7 @@ class CadastroAtualizacaoUsuarioRequest extends FormRequest
                 'required',
                 'email',
                 'min:5',
-                'max:255',
+                'max:500',
                 'unique:usuarios'
             ],
             'senha' => [

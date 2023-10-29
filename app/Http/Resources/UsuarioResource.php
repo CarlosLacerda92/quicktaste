@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class UsuarioResource extends JsonResource
@@ -18,7 +19,7 @@ class UsuarioResource extends JsonResource
         return [
             'id'   => $this->id,
             'nome' => $this->nome,
-            'email'=> $this->email
+            'email'=> Crypt::decrypt($this->email)
         ];
     }
 }

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CadastroAtualizacaoUsuarioRequest;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Crypt;
 use App\Http\Resources\UsuarioResource;
+use App\Http\Requests\CadastroAtualizacaoUsuarioRequest;
 
 class UsuarioController extends Controller {
 
@@ -19,6 +20,9 @@ class UsuarioController extends Controller {
 
         #   Pega apenas o que foi validado pelo CadastroAtualizacaoUsuarioRequest, ignorando dados "extras" e/ou preenchidos incorretamente.
         $dados = $request->validated();
+
+        #   Criptografa o e-mail antes de enviá-lo para a base de dados.
+        $dados['email'] = Crypt::encrypt($dados['email']);
 
         #   Criptografa a senha antes de enviá-la para a base de dados.
         $dados['senha'] = bcrypt($dados['senha']);
