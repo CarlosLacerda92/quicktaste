@@ -11,7 +11,7 @@ class UsuarioEnderecoController extends Controller
 {
     /**
      * @param CadastroAtualizacaoUsuarioEnderecoRequest $request.
-     * @return UsuarioResource $usuario.
+     * @return UsuarioEnderecoResource $usuario.
      * @access public
      */
     public function criarEnderecoUsuario(CadastroAtualizacaoUsuarioEnderecoRequest $request) {
