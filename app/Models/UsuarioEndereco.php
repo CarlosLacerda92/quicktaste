@@ -6,17 +6,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
 
-class Usuario extends Model
+class UsuarioEndereco extends Model
 {
     use HasApiTokens, HasFactory;
-    
-    //public $timestamps = false;
-    protected $table = 'usuarios';
+
+    protected $table = 'usuarios_enderecos';
 
     #   Quais campos podem ser cadastrados no banco via chamadas API.
     protected $fillable = [
-        'email',
-        'senha',
-        'nome'
+        'id_usuario',
+        'cep',
+        'logradouro',
+        'bairro',
+        'numero',
+        'cidade',
+        'estado'
     ];
 }

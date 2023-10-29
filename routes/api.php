@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\AutenticacaoController;
+use App\Http\Controllers\UsuarioEnderecoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,5 @@ Route::post('/autenticar', [AutenticacaoController::class, 'autenticar']);
 Route::middleware(['auth:sanctum'])->group(function() {
     Route::post('/criarUsuario', [UsuarioController::class, 'criarUsuario']);
     Route::get('/exibirTodosUsuarios', [UsuarioController::class, 'exibirTodosUsuarios']);
+    Route::post('/criarEnderecoUsuario', [UsuarioEnderecoController::class, 'criarEnderecoUsuario']);
 });

@@ -17,9 +17,9 @@ class UsuarioResource extends JsonResource
     public function toArray(Request $request)
     {
         return [
-            'id'   => $this->id,
-            'nome' => $this->nome
-            /* 'email'=> sha1(sha1($this->email)) */
+            'id'        => $this->id,
+            'nome'      => $this->nome,
+            'criado_em' => Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at)->format('d/m/Y H:i:s')
         ];
     }
 }
