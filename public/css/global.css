@@ -1,0 +1,49 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.princ {
+    padding: 2rem;
+}
+
+.qk-input {
+    border: 1px solid #DDD;
+    border-radius: 1.5rem;
+    padding: 1rem 1.5rem;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--vermelho);
+    color: #ffffff;
+    padding: 1rem;
+}
+
+.cabecalho-menus {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.cabecalho-menus span {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.cabecalho-menus span:hover {
+    background-color: #f3525b;
+}
+
+.cabecalho .cabecalho-perfil {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cabecalho .cabecalho-perfil .foto-perfil {
+    width: 3rem;
+}
