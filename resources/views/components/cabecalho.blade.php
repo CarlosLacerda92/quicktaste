@@ -4,7 +4,7 @@
         QuickTaste
     </div>
 
-   <div class="cabecalho-menus">
+   {{-- <div class="cabecalho-menus">
         <span>
             Home
         </span>
@@ -15,6 +15,16 @@
         
         <span>
             Contato
+        </span>
+   </div> --}}
+
+   <div>
+        <span>
+            Entregar em &nbsp;
+        </span>
+        <i class="fa-solid fa-location-dot"></i>
+        <span>
+            Rua Laranjeiras, 512, São Lucas
         </span>
    </div>
 
