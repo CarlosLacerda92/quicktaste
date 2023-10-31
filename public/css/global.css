@@ -4,22 +4,23 @@ body {
 }
 
 .princ {
-    padding: 2rem;
+    /* padding: 2rem; */
 }
 
 .qk-input {
-    border: 1px solid #DDD;
+    outline: none;
+    border: none;
     border-radius: 1.5rem;
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 1.5rem;
 }
 
 .cabecalho {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--vermelho);
+    background-color: var(--laranja);
     color: #ffffff;
-    padding: 1rem;
+    padding: 1rem 2.5rem;
 }
 
 .cabecalho-menus {
@@ -35,7 +36,7 @@ body {
 }
 
 .cabecalho-menus span:hover {
-    background-color: #f3525b;
+    background-color: var(--amarelo);
 }
 
 .cabecalho .cabecalho-perfil {
@@ -46,4 +47,22 @@ body {
 
 .cabecalho .cabecalho-perfil .foto-perfil {
     width: 3rem;
+}
+
+.div-bem-vindo {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    color: white;
+    background-image: url(https://images.pexels.com/photos/3186654/pexels-photo-3186654.jpeg?);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: brightness(0.5);
+    /* filter: brightness(0.5);
+    -webkit-filter: brightness(0.5); */
+    /* filter: blur(0.5rem);
+    -webkit-filter: blur(0.5rem)*/
 }
