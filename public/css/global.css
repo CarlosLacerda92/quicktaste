@@ -3,8 +3,29 @@ body {
     margin: 0;
 }
 
+button {
+    font-family: 'Poppins', sans-serif;
+}
+
 .princ {
     /* padding: 2rem; */
+}
+
+.qk-input-group {
+    display: flex;
+    align-items: stretch;
+}
+
+.qk-input-group .qk-input:last-child,
+.qk-input-group :not(input):last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.qk-input-group .qk-input:first-child,
+.qk-input-group :not(input):first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .qk-input {
@@ -14,55 +35,48 @@ body {
     padding: 0.75rem 1.5rem;
 }
 
-.cabecalho {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--laranja);
-    color: #ffffff;
-    padding: 1rem 2.5rem;
-}
-
-.cabecalho-menus {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-}
-
-.cabecalho-menus span {
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
+.qk-btn {
+    padding: 0.5rem 0.75rem;
+    border-radius: 1.5rem;
+    border: none;
     cursor: pointer;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.cabecalho-menus span:hover {
-    background-color: var(--amarelo);
+.qk-btn-principal {
+    background-color: var(--principal);
+    color: #ffffff;
 }
 
-.cabecalho .cabecalho-perfil {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.qk-btn-principal:hover {
+    background-color: var(--principal-hover);
 }
 
-.cabecalho .cabecalho-perfil .foto-perfil {
-    width: 3rem;
-}
-
+/**/
 .div-bem-vindo {
-    padding: 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
+    background-color: #00000094;
     color: white;
     background-image: url(https://images.pexels.com/photos/3186654/pexels-photo-3186654.jpeg?);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    backdrop-filter: brightness(0.5);
-    /* filter: brightness(0.5);
-    -webkit-filter: brightness(0.5); */
-    /* filter: blur(0.5rem);
-    -webkit-filter: blur(0.5rem)*/
+}
+
+.div-bem-vindo .bem-vindo-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2.5rem;
+    background-color: #00000094;
+}
+
+.div-bem-vindo .bem-vindo-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

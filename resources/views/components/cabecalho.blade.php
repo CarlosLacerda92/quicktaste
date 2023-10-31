@@ -1,22 +1,10 @@
+<link href="{{ asset('css/components/cabecalho.css') }}" rel="stylesheet">
+
 <div class="cabecalho">
 
     <div class="logo">
         QuickTaste
     </div>
-
-   {{-- <div class="cabecalho-menus">
-        <span>
-            Home
-        </span>
-
-        <span>
-            Sobre
-        </span>
-        
-        <span>
-            Contato
-        </span>
-   </div> --}}
 
    <div>
         <span>
@@ -28,11 +16,11 @@
         </span>
    </div>
 
-    <div style="display: flex; align-items: center; gap: 2rem;">
+    <div class="container-perfil">
 
-        <div style="display: flex; aligin-items: center; gap: 2rem;">
-            <i class="fa-solid fa-bell" style="font-size: 1.25rem;"></i>
-            <i class="fa-solid fa-cart-shopping" style="font-size: 1.25rem;"></i>
+        <div class="notificacoes">
+            <i class="fa-solid fa-bell"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
         </div>
         
         <div class="cabecalho-perfil">

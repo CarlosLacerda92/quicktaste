@@ -1,0 +1,50 @@
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--principal);
+    color: #ffffff;
+    padding: 1rem 2.5rem;
+}
+
+.cabecalho-menus {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.cabecalho-menus span {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.cabecalho-menus span:hover {
+    background-color: var(--amarelo);
+}
+
+.cabecalho .cabecalho-perfil {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cabecalho .cabecalho-perfil .foto-perfil {
+    width: 3rem;
+}
+
+.cabecalho .container-perfil {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cabecalho .container-perfil .notificacoes {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cabecalho .container-perfil .notificacoes i {
+    font-size: 1.25rem;
+}

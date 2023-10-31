@@ -1,5 +1,7 @@
 :root {
-    --amarelo: #ffc529;
-    --laranja: #fe724c;
-    --vermelho: #e7404a;
+    --principal: #f55951;
+    --secundaria: #fe724c;
+    --terciaria: #ffc529;
+
+    --principal-hover: #c3443d;
 }
