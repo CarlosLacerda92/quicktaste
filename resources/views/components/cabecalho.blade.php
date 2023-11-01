@@ -19,13 +19,14 @@
     <div class="container-perfil">
 
         <div class="notificacoes">
-            <i class="fa-solid fa-bell"></i>
             <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-bell"></i>
         </div>
         
         <div class="cabecalho-perfil">
             <img class="foto-perfil" src="{{ asset('storage/fotos_perfil/id_3.png') }}" />
             <i class="fa-solid fa-chevron-down"></i>
+            <x-dropdown />
         </div>
     </div>
 </div>
