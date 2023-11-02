@@ -1,1 +1,1 @@
-alert('chegou')
+console.log('chegou')

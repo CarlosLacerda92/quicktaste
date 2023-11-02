@@ -1,3 +1,3 @@
-<div>
-    <!-- Very little is needed to make a happy life. - Marcus Aurelius -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+    
 </div>

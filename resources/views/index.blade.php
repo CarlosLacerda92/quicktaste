@@ -1,7 +1,7 @@
 
 <x-inicio />
 
-<x-cabecalho />
+<x-cabecalho endereco="Rua Laranjeiras, 415, São Lucas" qtdNotificacoes="7" usuario="3" />
 
 <script src="{{ asset('js/index.js') }}"></script>
     
@@ -32,6 +32,7 @@
             É simples e rápido!
         </span>
     </div>
+    {{-- <x-card-grid /> --}}
 </div>
 
 <x-fim />

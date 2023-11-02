@@ -8,12 +8,18 @@ use Illuminate\View\Component;
 
 class Cabecalho extends Component
 {
+    public $endereco;
+    public $qtdNotificacoes;
+    public $usuario;
+
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($endereco, $qtdNotificacoes, $usuario)
     {
-        //
+        $this->endereco        = $endereco;
+        $this->qtdNotificacoes = $qtdNotificacoes;
+        $this->usuario         = $usuario;
     }
 
     /**

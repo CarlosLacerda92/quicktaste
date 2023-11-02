@@ -12,7 +12,7 @@
         </span>
         <i class="fa-solid fa-location-dot"></i>
         <span>
-            Rua Laranjeiras, 512, São Lucas
+            {{$endereco}}
         </span>
    </div>
 
@@ -29,7 +29,7 @@
                 <i class="fa-solid fa-bell fa-fw"></i>
 
                 <span class="position-absolute translate-middle badge rounded-pill bg-qk-verm" style="top: 5px; left: 40px;">
-                    4
+                    {{$qtdNotificacoes}}
                     <span class="visually-hidden">
                         Notificações não lidas
                     </span>
