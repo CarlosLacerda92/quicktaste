@@ -6,12 +6,12 @@
         <span style="font-style: italic;">Quick</span><span style="font-weight: 600;">Taste</span>
     </div>
 
-   <div>
+   <div class="cabecalho-endereco">
         <span>
             Entregar em &nbsp;
         </span>
         <i class="fa-solid fa-location-dot"></i>
-        <span style="border-bottom: 2px solid var(--principal);">
+        <span>
             Rua Laranjeiras, 512, São Lucas
         </span>
    </div>
@@ -20,13 +20,15 @@
 
         <div class="icones">
 
-            <button type="button" class="qk-btn qk-btn-princ" data-bs-toggle="tooltip" data-bs-placement="left" title="Carrinho">
+            <button type="button" class="qk-btn qk-btn-princ" data-bs-toggle="tooltip" title="Carrinho">
                 <i class="fa-solid fa-cart-shopping fa-fw"></i>
             </button>
 
-            <button type="button" class="qk-btn qk-btn-princ position-relative" data-bs-toggle="tooltip" data-bs-placement="left" title="Notificações">
+            <button type="button" class="qk-btn qk-btn-princ position-relative" data-bs-toggle="tooltip" title="Notificações">
+
                 <i class="fa-solid fa-bell fa-fw"></i>
-                <span class="position-absolute translate-middle badge rounded-pill bg-danger" style="top: 5px; left: 40px;">
+
+                <span class="position-absolute translate-middle badge rounded-pill bg-qk-verm" style="top: 5px; left: 40px;">
                     4
                     <span class="visually-hidden">
                         Notificações não lidas

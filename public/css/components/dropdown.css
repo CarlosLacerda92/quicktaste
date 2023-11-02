@@ -29,10 +29,10 @@
     font-size: 0.875rem;
 }
 
-.dropdown-menu a.dropdown-item:hover {
+/* .dropdown-menu a.dropdown-item:hover {
     background-color: var(--principal-claro);
-}
+} */
 
 .dropdown-menu .dropdown-item i {
-    color: var(--qk-cinza);
+    color: var(--principal);
 }

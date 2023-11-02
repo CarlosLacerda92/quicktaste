@@ -14,11 +14,9 @@
                 Como está sua fome hoje?
             </h3>
         </div>
-        <div class="qk-input-group">
-            <input type="text" class="qk-input" placeholder="Descubra pratos, restaurantes e mais em uma velocidade incrível!" style=" width: 50%" />
-            <button type="button" class="qk-btn qk-btn-principal">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
+        <div class="position-relative">
+            <input type="text" name="pesquisa" class="form-control" placeholder="Descubra pratos, restaurantes e mais em uma velocidade incrível!" style="width: 50%; padding-left: 2rem;" />
+            <i class="fa-solid fa-magnifying-glass fa-fw position-absolute top-0 start-0 txt-qk-cinza" style="margin-top: 0.7rem; margin-left: 0.5rem;"></i>
         </div>
     </div>
 </div>

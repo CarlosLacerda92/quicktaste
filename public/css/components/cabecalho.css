@@ -2,8 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background-color: var(--principal);
-    color: #ffffff; */
     color: var(--qk-preto);
     padding: 1rem 2.5rem;
 }
@@ -13,20 +11,12 @@
     font-size: 1.25rem;
 }
 
-.cabecalho-menus {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
+.cabecalho-endereco i {
+    color: var(--principal);
 }
 
-.cabecalho-menus span {
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    cursor: pointer;
-}
-
-.cabecalho-menus span:hover {
-    background-color: var(--amarelo);
+.cabecalho-endereco span:last-child {
+    border-bottom: 2px solid var(--principal);
 }
 
 .cabecalho .cabecalho-perfil {
@@ -36,7 +26,7 @@
 }
 
 .cabecalho .cabecalho-perfil .foto-perfil {
-    width: 3rem;
+    width: 3.5rem;
     border: 0.25rem solid var(--principal);
     border-radius: 50%;
 }
