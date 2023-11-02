@@ -6,8 +6,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 async function buscarRestaurantes() {
 
-    let texto = document.getElementById('inputBusca').value;
-    let form  = document.getElementById('formBuscaRestaurantes');
+    let texto   = document.getElementById('inputBusca').value;
+    let form    = document.getElementById('formBuscaRestaurantes');
+    let div     = document.querySelector('div#resultadoBusca div[data-resultados]');
+    let divini  = document.querySelector('div#resultadoBusca div[data-inicio]');
+    let divnada = document.querySelector('div#resultadoBusca div[data-naoencontrado]');
+
 
     if (texto.length < 3) {
         return;
@@ -21,7 +25,9 @@ async function buscarRestaurantes() {
         body: fd
     });
 
-    const {success, output} = await r.json();
+    const retorno = await r.text();
 
-    //console.log(success);
+    divini.classList.add('d-none');
+    div.innerHTML = retorno;
+    div.classList.remove('d-none');
 }

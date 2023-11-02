@@ -8,12 +8,14 @@ use Illuminate\View\Component;
 
 class CardRestaurante extends Component
 {
+    public $nome;
+
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($nome)
     {
-        //
+        $this->nome = $nome;
     }
 
     /**

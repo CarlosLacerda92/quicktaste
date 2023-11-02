@@ -28,15 +28,23 @@
     </div>
 </div>
 
-<div id="resultadoBusca" class="w-100 d-flex align-items-center justify-content-center">
-    <img class="img-svg" src="{{ asset('img/svg/restaurant-flatline.svg') }}" />
-    <div class="d-flex flex-column gap-2">
-        <span>
-            Busque pelos seus pratos e restaurantes favoritos!
-        </span>
-        <span style="font-size: 1.5rem; font-weight: 600;">
-            É simples e rápido!
-        </span>
+<div id="resultadoBusca">
+    <div class="w-100 d-flex align-items-center justify-content-center" data-inicio>
+        <img class="img-svg" src="{{ asset('img/svg/restaurant-flatline.svg') }}" />
+        <div class="d-flex flex-column gap-2">
+            <span>
+                Busque pelos seus pratos e restaurantes favoritos!
+            </span>
+            <span style="font-size: 1.5rem; font-weight: 600;">
+                É simples e rápido!
+            </span>
+        </div>
+    </div>
+    <div class="d-none" data-naoencontrado>
+
+    </div>
+    <div class="d-none" data-resultados>
+
     </div>
     {{-- <x-card-grid /> --}}
 </div>

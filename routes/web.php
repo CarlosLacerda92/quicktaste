@@ -23,4 +23,5 @@ Route::get('/bemvindo', function () {
     return view('index');
 });
 
+#   Rota de busca de restaurantes.
 Route::post('/restaurantes', [RestauranteController::class, 'buscar']);
