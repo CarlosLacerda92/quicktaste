@@ -69,6 +69,10 @@ button {
     box-shadow: 0 0 0 0.25rem var(--principal-claro);
 }
 
+.img-svg {
+    width: 30%;
+}
+
 /**/
 .div-bem-vindo {
     display: flex;
@@ -77,7 +81,7 @@ button {
     gap: 1rem;
     background-color: #00000094;
     color: white;
-    background-image: url(https://images.pexels.com/photos/3186654/pexels-photo-3186654.jpeg?);
+    background-image: url('/img/jpeg/pexels-nerfee-mirandilla-3186654.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
