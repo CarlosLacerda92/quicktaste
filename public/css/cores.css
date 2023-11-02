@@ -1,8 +1,13 @@
 :root {
-    --principal: #f55951;
+    /* --principal: #f55951; */
+    --principal: #ffc529;
     --secundaria: #fe724c;
     --terciaria: #ffc529;
 
+    --qk-preto: #272d2f;
+    --qk-cinza: #5e5e5e;
+
     --principal-hover: #c3443d;
+    --principal-claro: #fdb3af33;
     --principal-border: rgba(245, 89, 81, 0.5);
 }

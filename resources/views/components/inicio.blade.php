@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="{{ asset('css/cores.css') }}" />
 
         <script src="{{ asset('front_end_assets/bootstrap53/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('js/global.js') }}"></script>
     </head>
 
     <body>
