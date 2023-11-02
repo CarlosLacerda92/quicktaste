@@ -1,3 +1,5 @@
-<div style="height: 10rem; border-radius: 0.5rem; background-color: blue;">
+<link href="{{ asset('css/components/cardrestaurante.css') }}" rel="stylesheet">
+
+<div class="card-restaurante">
     {{ $nome }}
 </div>

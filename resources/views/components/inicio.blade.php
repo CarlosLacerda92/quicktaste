@@ -19,6 +19,7 @@
 
         <script src="{{ asset('front_end_assets/bootstrap53/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('js/global.js') }}"></script>
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     </head>
 
     <body>

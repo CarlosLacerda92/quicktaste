@@ -1,0 +1,7 @@
+.card-restaurante {
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    height: 10rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}

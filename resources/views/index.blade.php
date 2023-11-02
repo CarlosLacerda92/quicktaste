@@ -46,6 +46,7 @@
     <div class="d-none" data-resultados>
 
     </div>
+    {{-- <dotlottie-player src="https://lottie.host/7401522f-2d8b-4049-ad18-eb0edb6af224/CE9lFrNlEH.json" background="transparent" speed="1" style="width: 300px; height: 300px" direction="1" mode="normal" loop autoplay></dotlottie-player> --}}
     {{-- <x-card-grid /> --}}
 </div>
 

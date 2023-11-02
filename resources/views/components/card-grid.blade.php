@@ -1,4 +1,6 @@
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+<link href="{{ asset('css/components/cardgrid.css') }}" rel="stylesheet">
+
+<div class="qk-card-grid">
     @foreach ($restaurantes as $r)
         <x-card-restaurante :nome="$r['nome']" />
     @endforeach

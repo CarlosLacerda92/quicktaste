@@ -12,7 +12,6 @@ async function buscarRestaurantes() {
     let divini  = document.querySelector('div#resultadoBusca div[data-inicio]');
     let divnada = document.querySelector('div#resultadoBusca div[data-naoencontrado]');
 
-
     if (texto.length < 3) {
         return;
     }
