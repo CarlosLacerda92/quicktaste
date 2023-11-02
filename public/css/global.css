@@ -40,14 +40,17 @@ button {
     box-shadow: 0 0 0 0.25rem var(--principal-border);
 }
 
-.qk-btn {
-    padding: 0.5rem 0.75rem;
-    border-radius: 1.5rem;
+ .qk-btn {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
     border: none;
     cursor: pointer;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
+/*
 .qk-btn-principal {
     background-color: var(--principal);
     color: #ffffff;
@@ -59,6 +62,11 @@ button {
 
 .qk-btn-principal:hover {
     background-color: var(--principal-hover);
+} */
+
+.qk-btn-princ {
+    background-color: var(--principal);
+    color: var(--qk-preto);
 }
 
 /**/

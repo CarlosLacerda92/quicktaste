@@ -11,7 +11,7 @@
             Entregar em &nbsp;
         </span>
         <i class="fa-solid fa-location-dot"></i>
-        <span>
+        <span style="border-bottom: 2px solid var(--principal);">
             Rua Laranjeiras, 512, São Lucas
         </span>
    </div>
@@ -19,16 +19,20 @@
     <div class="container-perfil">
 
         <div class="icones">
-            <i class="fa-solid fa-cart-shopping" data-bs-toggle="tooltip" data-bs-placement="left" title="Carrinho"></i>
-            <div class="position-relative">
-                <i class="fa-solid fa-bell" data-bs-toggle="tooltip" data-bs-placement="top" title="Notificações"></i>
-                <span class="position-absolute translate-middle badge rounded-pill bg-danger" style="top: 5px; left: 34px;">
+
+            <button type="button" class="qk-btn qk-btn-princ" data-bs-toggle="tooltip" data-bs-placement="left" title="Carrinho">
+                <i class="fa-solid fa-cart-shopping fa-fw"></i>
+            </button>
+
+            <button type="button" class="qk-btn qk-btn-princ position-relative" data-bs-toggle="tooltip" data-bs-placement="left" title="Notificações">
+                <i class="fa-solid fa-bell fa-fw"></i>
+                <span class="position-absolute translate-middle badge rounded-pill bg-danger" style="top: 5px; left: 40px;">
                     4
                     <span class="visually-hidden">
                         Notificações não lidas
                     </span>
                 </span>
-            </div>
+            </button>
         </div>
         
         <div class="cabecalho-perfil dropdown">
