@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RestauranteController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,8 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/restaurantes', function () {
+Route::get('/bemvindo', function () {
     return view('index');
 });
+
+Route::post('/restaurantes', [RestauranteController::class, 'buscar']);

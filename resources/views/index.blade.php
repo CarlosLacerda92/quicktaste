@@ -15,10 +15,16 @@
                 Como está sua fome hoje?
             </h3>
         </div>
-        <div class="position-relative">
-            <input type="text" name="pesquisa" class="form-control" placeholder="Descubra pratos, restaurantes e mais em uma velocidade incrível!" style="width: 50%; padding-left: 2rem;" />
-            <i class="fa-solid fa-magnifying-glass fa-fw position-absolute top-0 start-0 txt-qk-cinza" style="margin-top: 0.7rem; margin-left: 0.5rem;"></i>
-        </div>
+        <form id="formBuscaRestaurantes">
+            <div class="input-group w-50">
+            
+                <input type="text" id="inputBusca" name="inputBusca" class="form-control" placeholder="Descubra pratos, restaurantes e mais em uma velocidade incrível!" />
+                @csrf
+                <button type="button" id="btnBusca" class="qk-btn qk-btn-princ">
+                    <i class="fa-solid fa-magnifying-glass fa-fw"></i>
+                </button>
+            </div>
+        </form>
     </div>
 </div>
 
