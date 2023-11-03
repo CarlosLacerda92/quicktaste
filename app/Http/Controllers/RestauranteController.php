@@ -2,10 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RestauranteRequest;
+use App\Http\Resources\RestauranteResource;
+use App\Models\Restaurante;
 use Illuminate\Http\Request;
 
 class RestauranteController extends Controller
 {
+
+    public function cadastrarRestaurante(RestauranteRequest $request) {
+
+        #   Pega apenas o que foi validado pelo CadastroAtualizacaoUsuarioRequest, ignorando dados "extras" e/ou preenchidos incorretamente.
+        $dados = $request->validated();
+
+        #   Insere o registro na tabela USUARIOS.
+        $restaurante = Restaurante::create($dados);
+
+        #   Retorna os dados do usuário cadastrado de acordo com o formato estabelecido em UsuarioResource.
+        return new RestauranteResource($restaurante);
+    }
+
     public function buscar(Request $request) {
 
         $restaurantes = [

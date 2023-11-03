@@ -23,8 +23,8 @@ Route::get('/bemvindo', function () {
     return view('index');
 });
 
-#   Rota de busca de restaurantes.
+/* #   Rota de busca de restaurantes.
 Route::post('/restaurantes', [RestauranteController::class, 'buscar']);
 
 #   Rota dos cardárpios dos restaurantes.
-Route::post('/restaurantes', [RestauranteController::class, 'buscar']);
+Route::post('/cardapio', [RestauranteController::class, 'buscar']); */
