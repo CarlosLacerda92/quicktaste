@@ -80,7 +80,12 @@ class RestauranteRequest extends FormRequest
             ],
             'taxa_entrega' => [
                 'numeric'
-            ]
+            ],
+            'categoria' => [
+                'required',
+                'max:20',
+                'exists:restaurantes_categorias,id'
+            ],
         ];
     }
 }

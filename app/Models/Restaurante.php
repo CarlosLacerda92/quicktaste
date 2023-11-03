@@ -26,6 +26,7 @@ class Restaurante extends Model
         'instagram',
         'nota',
         'tempo_entrega',
-        'taxa_entrega'
+        'taxa_entrega',
+        'categoria'
     ];
 }
