@@ -41,6 +41,12 @@ class RestauranteController extends Controller
             ]
         ];
 
+        $restaurantes = [];
+
+        if (!$restaurantes) {
+            return null;
+        }
+
         return view('components.card-grid', compact('restaurantes'));
     }
 }

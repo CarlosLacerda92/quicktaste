@@ -40,11 +40,27 @@
             </span>
         </div>
     </div>
-    <div class="d-none" data-naoencontrado>
-
+    <div class="w-100 d-flex align-items-center justify-content-center d-none" data-naoencontrado>
+        <img class="img-svg" src="{{ asset('img/svg/pizza-flatline.svg') }}" />
+        <div class="d-flex flex-column gap-2">
+            <span style="font-size: 1.5rem; font-weight: 600;">
+                Nenhum resultado encontrado...
+            </span>
+            <span>
+                Tente uma nova busca!
+            </span>
+        </div>
     </div>
     <div class="d-none" data-resultados>
 
+    </div>
+    <div class="w-100 d-flex align-items-center justify-content-center d-none" data-carregando>
+        <dotlottie-player src="https://lottie.host/7401522f-2d8b-4049-ad18-eb0edb6af224/CE9lFrNlEH.json" background="transparent" speed="1" style="width: 300px; height: 300px" direction="1" mode="normal" loop autoplay></dotlottie-player>
+        <div class="d-flex flex-column gap-2">
+            <span style="font-size: 1.5rem; font-weight: 600;">
+                Buscando resultados...
+            </span>
+        </div>
     </div>
     {{-- <dotlottie-player src="https://lottie.host/7401522f-2d8b-4049-ad18-eb0edb6af224/CE9lFrNlEH.json" background="transparent" speed="1" style="width: 300px; height: 300px" direction="1" mode="normal" loop autoplay></dotlottie-player> --}}
     {{-- <x-card-grid /> --}}
