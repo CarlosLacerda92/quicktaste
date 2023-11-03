@@ -19,6 +19,10 @@
 }
 
 /************ Cores de texto ************/
+.txt-qk-princ {
+    color: var(--ffc529);
+}
+
 .txt-qk-cinza {
     color: var(--qk-cinza);
 }

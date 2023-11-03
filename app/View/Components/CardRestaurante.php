@@ -9,13 +9,15 @@ use Illuminate\View\Component;
 class CardRestaurante extends Component
 {
     public $nome;
+    public $imgsrc;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($nome)
+    public function __construct($nome, $imgsrc)
     {
-        $this->nome = $nome;
+        $this->nome   = $nome;
+        $this->imgsrc = $imgsrc;
     }
 
     /**
