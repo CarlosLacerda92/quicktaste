@@ -8,6 +8,8 @@
     --qk-cinza: #5e5e5e;
     --qk-vermelho: #f55951;
 
+    --qk-cinza-claro: #9b9b9b;
+
     --principal-claro: rgb(250, 209, 96);
     --principal-escuro: #ddab22;
 
@@ -20,7 +22,7 @@
 
 /************ Cores de texto ************/
 .txt-qk-princ {
-    color: var(--ffc529);
+    color: var(--principal);
 }
 
 .txt-qk-cinza {
@@ -31,6 +33,11 @@
     color: var(--qk-vermelho);
 }
 
+.txt-qk-cinza-claro {
+    color: var(--qk-cinza-claro);
+}
+
+/************ Cores de fundo ************/
 .bg-qk-verm {
     background-color: var(--qk-vermelho);
 }

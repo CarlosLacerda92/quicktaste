@@ -11,11 +11,11 @@
         <div class="d-flex align-items-center gap-2" style="font-size: 0.75rem;">
             <div>
                 @for ($i = 1; $i <= 5; $i++)
-                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-solid fa-star txt-qk-cinza-claro"></i>
                 @endfor
             </div>
             <span class="txt-qk-princ">
-                4,5
+                <strong>4,5</strong>
             </span>
             <span class="txt-qk-cinza">
                 (19 avaliações)

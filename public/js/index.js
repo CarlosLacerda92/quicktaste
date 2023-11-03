@@ -2,6 +2,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById('btnBusca').addEventListener('click', function() {
         buscarRestaurantes();
     });
+
+    document.getElementById('inputBusca').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            buscarRestaurantes();
+        }
+    });
 });
 
 async function buscarRestaurantes() {
