@@ -18,7 +18,7 @@
         <form id="formBuscaRestaurantes">
             <div class="input-group w-50">
             
-                <input type="text" id="inputBusca" name="inputBusca" class="form-control" placeholder="Descubra pratos, restaurantes e mais em uma velocidade incrível!" />
+                <input type="text" id="inputBusca" name="inputBusca" class="form-control" placeholder="Descubra pratos, restaurantes e mais!" />
                 @csrf
                 <button type="button" id="btnBusca" class="qk-btn qk-btn-princ">
                     <i class="fa-solid fa-magnifying-glass fa-fw"></i>
@@ -51,7 +51,7 @@
             </span>
         </div>
     </div>
-    <div class="d-none" data-resultados>
+    <div class="d-none flex-column" style="padding: 2rem; gap: 2rem;" data-resultados>
 
     </div>
     <div class="w-100 d-flex align-items-center justify-content-center d-none" data-carregando>

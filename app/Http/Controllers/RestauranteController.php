@@ -28,13 +28,13 @@ class RestauranteController extends Controller
 
         #   Buscando os restaurantes.
         if ($texto) {
-            $restaurantes = Restaurante::where('restaurantes.status', 1)->join('restaurantes_categorias', 'categoria', '=', 'restaurantes_categorias.id')->select('restaurantes.*', 'restaurantes_categorias.descricao as nomecategoria')->where('nome', 'like', "%{$texto}%")->get();
+            $restaurantes = Restaurante::where('restaurantes.status', 1)->join('restaurantes_categorias', 'categoria', '=', 'restaurantes_categorias.id')->select('restaurantes.*', 'restaurantes_categorias.descricao as nomecategoria')->where('nome', 'like', "%{$texto}%")->orderBy('nome')->get();
         }
         else {
-            $restaurantes = Restaurante::where('restaurantes.status', 1)->join('restaurantes_categorias', 'categoria', '=', 'restaurantes_categorias.id')->select('restaurantes.*', 'restaurantes_categorias.descricao as nomecategoria')->get();
+            $restaurantes = Restaurante::where('restaurantes.status', 1)->join('restaurantes_categorias', 'categoria', '=', 'restaurantes_categorias.id')->select('restaurantes.*', 'restaurantes_categorias.descricao as nomecategoria')->orderBy('nome')->get();
         }
 
-        if (!$restaurantes) {
+        if ($restaurantes->isEmpty()) {
             return null;
         }
 

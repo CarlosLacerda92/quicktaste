@@ -48,4 +48,5 @@ async function buscarRestaurantes() {
 
     div.innerHTML = retorno;
     div.classList.remove('d-none');
+    div.classList.add('d-flex');
 }
