@@ -27,7 +27,7 @@ class RestauranteResource extends JsonResource
             'telefone'      => $this->telefone,
             'whatsapp'      => $this->whatsapp,
             'instagram'     => $this->instagram,
-            'nota'          => $this->nota,
+            'nota'          => str_replace('.', ',', $this->nota),
             'tempo_entrega' => $this->tempo_entrega,
             'taxa_entrega'  => $this->taxa_entrega,
             'categoria'     => $this->categoria,

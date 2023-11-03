@@ -12,20 +12,20 @@ class CardRestaurante extends Component
     public $nome;
     public $nota;
     public $categoria;
-    /* public $nomeCategoria; */
+    public $nomecategoria;
     public $tempoentrega;
     public $taxaentrega;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($id, $nome, $nota, $categoria, /* $nomeCategoria, */ $tempoentrega, $taxaentrega)
+    public function __construct($id, $nome, $nota, $categoria, $nomecategoria, $tempoentrega, $taxaentrega)
     {
         $this->id            = $id;
         $this->nome          = $nome;
         $this->nota          = $nota;
         $this->categoria     = $categoria;
-        /* $this->nomeCategoria = $nomeCategoria; */
+        $this->nomecategoria = $nomecategoria;
         $this->tempoentrega  = $tempoentrega;
         $this->taxaentrega   = $taxaentrega;
     }

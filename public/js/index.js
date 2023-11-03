@@ -32,7 +32,7 @@ async function buscarRestaurantes() {
     //  Chamada.
     const fd = new FormData(form);
 
-    const r = await fetch('/restaurantes', {
+    const r = await fetch('/api/restaurantes', {
         method: 'POST',
         body: fd
     });

@@ -11,7 +11,7 @@
         <div class="d-flex align-items-center gap-2" style="font-size: 0.75rem;">
             <div>
                 @for ($i = 1; $i <= 5; $i++)
-                    <i class="fa-solid fa-star txt-qk-cinza-claro"></i>
+                    <i class="fa-solid fa-star {{ $i <= (int)$nota ? "txt-qk-princ" : "txt-qk-cinza-claro" }}"></i>
                 @endfor
             </div>
             <span class="txt-qk-princ">
@@ -25,7 +25,7 @@
             <div class="d-flex align-items-center gap-2">
                 <i class="fa-solid fa-utensils"></i>
                 <span>
-                    {{ $categoria }}
+                    {{ $nomecategoria }}
                 </span>
             </div>
             <div class="d-flex align-items-center gap-2" data-bs-toggle="tooltip" title="Tempo estimado de entrega">

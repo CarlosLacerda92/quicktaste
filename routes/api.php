@@ -35,3 +35,6 @@ Route::middleware(['auth:sanctum'])->group(function() {
     #   Restaurantes.
     Route::post('/cadastrarRestaurante', [RestauranteController::class, 'cadastrarRestaurante']);
 });
+
+#   Rota de busca de restaurantes.  DEPOIS, ADICIONAR ESSA ROTA NAS ROTAS AUTENTICADAS!!!
+Route::post('/restaurantes', [RestauranteController::class, 'buscar']);
