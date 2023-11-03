@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Restaurante extends Model
 {
@@ -29,4 +30,8 @@ class Restaurante extends Model
         'taxa_entrega',
         'categoria'
     ];
+
+    /* public function buscarRestaurantePorPalavra($texto) {
+        return DB::table('restaurantes')->where('nome', 'LIKE', "%{$texto}%")->get();
+    } */
 }

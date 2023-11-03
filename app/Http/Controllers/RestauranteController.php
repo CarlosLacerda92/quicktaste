@@ -24,7 +24,9 @@ class RestauranteController extends Controller
 
     public function buscar(Request $request) {
 
-        $restaurantes = [
+        $texto = $request->inputBusca;
+
+        /* $restaurantes = [
             [
                 'id'     => 1,
                 'nome'   => 'Rest. 1',
@@ -55,11 +57,23 @@ class RestauranteController extends Controller
                 'nome'   => 'Rest. 6',
                 'imgsrc' => 'storage/fotos_restaurantes/id_6.jpg'
             ]
-        ];
+        ]; */
+
+        #   Buscando os restaurantes.
+        if ($texto) {
+            $restaurantes = Restaurante::where('status', 1)->where('nome', 'like', "%{$texto}%")->get();
+        }
+        else {
+            $restaurantes = Restaurante::where('status', 1)->get();
+        }
 
         if (!$restaurantes) {
             return null;
         }
+
+        //return RestauranteResource::collection($restaurantes);
+
+        $restaurantes = RestauranteResource::collection($restaurantes);
 
         return view('components.card-grid', compact('restaurantes'));
     }

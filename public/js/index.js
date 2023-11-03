@@ -20,9 +20,9 @@ async function buscarRestaurantes() {
     let divnada = document.querySelector('div#resultadoBusca div[data-naoencontrado]');
     let divload = document.querySelector('div#resultadoBusca div[data-carregando]');
 
-    if (texto.length < 3) {
+    /* if (texto.length < 3) {
         return;
-    }
+    } */
 
     div.classList.add('d-none');
     divini.classList.add('d-none');

@@ -8,16 +8,26 @@ use Illuminate\View\Component;
 
 class CardRestaurante extends Component
 {
+    public $id;
     public $nome;
-    public $imgsrc;
+    public $nota;
+    public $categoria;
+    /* public $nomeCategoria; */
+    public $tempoentrega;
+    public $taxaentrega;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($nome, $imgsrc)
+    public function __construct($id, $nome, $nota, $categoria, /* $nomeCategoria, */ $tempoentrega, $taxaentrega)
     {
-        $this->nome   = $nome;
-        $this->imgsrc = $imgsrc;
+        $this->id            = $id;
+        $this->nome          = $nome;
+        $this->nota          = $nota;
+        $this->categoria     = $categoria;
+        /* $this->nomeCategoria = $nomeCategoria; */
+        $this->tempoentrega  = $tempoentrega;
+        $this->taxaentrega   = $taxaentrega;
     }
 
     /**

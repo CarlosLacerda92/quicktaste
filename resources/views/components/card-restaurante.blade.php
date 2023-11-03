@@ -2,7 +2,7 @@
 
 <div class="card-restaurante">
     <div style="height: 10rem; overflow: hidden;">
-        <img src="{{ asset($imgsrc) }}" />
+        <img src="{{ asset("storage/fotos_restaurantes/id_{$id}.jpg") }}" />
     </div>
     <div class="card-restaurante-conteudo">
         <h6 class="card-restaurante-cabecalho mb-0">
@@ -15,29 +15,29 @@
                 @endfor
             </div>
             <span class="txt-qk-princ">
-                <strong>4,5</strong>
+                <strong>{{ $nota }}</strong>
             </span>
-            <span class="txt-qk-cinza">
+            {{-- <span class="txt-qk-cinza">
                 (19 avaliações)
-            </span>
+            </span> --}}
         </div>
         <div class="d-flex align-items-center justify-content-between gap-2" style="font-size: 0.75rem;">
             <div class="d-flex align-items-center gap-2">
                 <i class="fa-solid fa-utensils"></i>
                 <span>
-                    Fast food
+                    {{ $categoria }}
                 </span>
             </div>
             <div class="d-flex align-items-center gap-2" data-bs-toggle="tooltip" title="Tempo estimado de entrega">
                 <i class="fa-solid fa-clock"></i>
                 <span>
-                    20 ~ 50min
+                    {{ $tempoentrega }}min
                 </span>
             </div>
             <div class="d-flex align-items-center gap-2" data-bs-toggle="tooltip" title="Valor cobrado pela entrega">
                 <i class="fa-solid fa-money-bill"></i>
                 <span>
-                    R$5,99
+                    R${{ $taxaentrega }}
                 </span>
             </div>
         </div>

@@ -23,7 +23,7 @@ Route::get('/bemvindo', function () {
     return view('index');
 });
 
-#   Rota de busca de restaurantes.
+#   Rota de busca de restaurantes.  DEPOIS, ADICIONAR ESSA ROTA NAS ROTAS AUTENTICADAS!!!
 Route::post('/restaurantes', [RestauranteController::class, 'buscar']);
 
 /* #   Rota dos cardárpios dos restaurantes.

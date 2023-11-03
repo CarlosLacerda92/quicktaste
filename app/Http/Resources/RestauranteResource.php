@@ -16,9 +16,23 @@ class RestauranteResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id'        => $this->id,
-            'nome'      => $this->nome,
-            'criado_em' => Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at)->format('d/m/Y H:i:s')
+            'id'            => $this->id,
+            'nome'          => $this->nome,
+            'cep'           => $this->cep,
+            'logradouro'    => $this->logradouro,
+            'bairro'        => $this->bairro,
+            'numero'        => $this->nome,
+            'cidade'        => $this->cidade,
+            'estado'        => $this->estado,
+            'telefone'      => $this->telefone,
+            'whatsapp'      => $this->whatsapp,
+            'instagram'     => $this->instagram,
+            'nota'          => $this->nota,
+            'tempo_entrega' => $this->tempo_entrega,
+            'taxa_entrega'  => $this->taxa_entrega,
+            'categoria'     => $this->categoria,
+            'criado_em'     => Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at)->format('d/m/Y H:i:s'),
+            'atualizado_em' => Carbon::createFromFormat('Y-m-d H:i:s', $this->updated_at)->format('d/m/Y H:i:s')
         ];
     }
 }
