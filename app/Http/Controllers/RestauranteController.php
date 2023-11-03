@@ -41,8 +41,6 @@ class RestauranteController extends Controller
             ]
         ];
 
-        $restaurantes = [];
-
         if (!$restaurantes) {
             return null;
         }

@@ -55,15 +55,13 @@
 
     </div>
     <div class="w-100 d-flex align-items-center justify-content-center d-none" data-carregando>
-        <dotlottie-player src="https://lottie.host/7401522f-2d8b-4049-ad18-eb0edb6af224/CE9lFrNlEH.json" background="transparent" speed="1" style="width: 300px; height: 300px" direction="1" mode="normal" loop autoplay></dotlottie-player>
+        <dotlottie-player src="https://lottie.host/a39cb574-ac6b-40ce-a3b7-148bcf72fdac/B7JaCiqiPp.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
         <div class="d-flex flex-column gap-2">
             <span style="font-size: 1.5rem; font-weight: 600;">
                 Buscando resultados...
             </span>
         </div>
     </div>
-    {{-- <dotlottie-player src="https://lottie.host/7401522f-2d8b-4049-ad18-eb0edb6af224/CE9lFrNlEH.json" background="transparent" speed="1" style="width: 300px; height: 300px" direction="1" mode="normal" loop autoplay></dotlottie-player> --}}
-    {{-- <x-card-grid /> --}}
 </div>
 
 <x-fim />

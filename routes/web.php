@@ -25,3 +25,6 @@ Route::get('/bemvindo', function () {
 
 #   Rota de busca de restaurantes.
 Route::post('/restaurantes', [RestauranteController::class, 'buscar']);
+
+#   Rota dos cardárpios dos restaurantes.
+Route::post('/restaurantes', [RestauranteController::class, 'buscar']);
