@@ -20,6 +20,7 @@
 
         <script src="{{ asset('front_end_assets/bootstrap53/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('js/global.js') }}"></script>
+        <script src="{{ asset('js/login.js') }}"></script>
         <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     </head>
 
@@ -41,22 +42,31 @@
                     Log<span class="txt-qk-princ">in</span>
                 </h3>
                 
-                <form class="d-flex flex-column align-items-center justify-content-center gap-4" action="">
-                    <div class="input-group w-100">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-envelope"></i>
-                        </span>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="E-mail">
-                    </div>
-                    <div class="input-group w-100">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-lock"></i>
-                        </span>
-                        <div class="position-relative w-100">
-                            <input type="text" class="form-control w-100" id="senha" name="senha" placeholder="Senha">
-                            <i class="fa-regular fa-eye-slash position-absolute top-0 end-0 mt-3 me-2"></i>
+                <form id="formlogin" class="d-flex flex-column align-items-center justify-content-center gap-4 needs-validation" method="POST" action="/api/autenticar">
+                    @csrf
+                    <div class="d-flex flex-column gap-1 w-100">
+                        <div class="input-group w-100">
+                            <span class="input-group-text">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="E-mail">
                         </div>
+                        <small class="txt-qk-verm d-none" data-validar="email"></small>
                     </div>
+
+                    <div class="d-flex flex-column gap-1 w-100">
+                        <div class="input-group flex-nowrap w-100">
+                            <span class="input-group-text">
+                                <i class="fa-solid fa-lock"></i>
+                            </span>
+                            <div class="position-relative w-100">
+                                <input type="password" class="form-control w-100" id="senha" name="senha" placeholder="Senha">
+                                <i class="fa-regular fa-eye-slash position-absolute top-0 end-0" style="margin: 0.7rem 0.7rem 0 0; cursor: pointer;" data-bs-toggle="tooltip" title="Mostrar senha"></i>
+                            </div>
+                        </div>
+                        <small class="txt-qk-verm d-none" data-validar="senha"></small>
+                    </div>
+
                     <div class="d-flex align-items-center w-100">
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="lembrar" name="lembrar" value="1">
@@ -70,13 +80,14 @@
                             </a>
                         </div>
                     </div>
-                    <button type="button" id="entrar" class="qk-btn qk-btn-princ w-100 fw-bold">
+
+                    <button type="submit" id="entrar" class="qk-btn qk-btn-princ w-100 fw-bold" style="height: 3rem;">
                         Entrar
                     </button>
-                    <button type="button" id="entrarGoogle" class="qk-btn qk-btn-princ-outline gap-2 w-100">
-                        <img src="/img/svg/google_logo.svg" alt="logo_google" style="aspect-ratio: 1; width: 14%;">
+                    <button type="button" id="entrarGoogle" class="qk-btn qk-btn-princ-outline gap-2 w-100" style="height: 3rem;">
+                        <img src="/img/svg/google_logo.svg" alt="logo_google" style="aspect-ratio: 1; height: 100%;">
                         <span>
-                            Entrar com Google
+                            Entrar com o Google
                         </span>
                     </button>
                 </form>

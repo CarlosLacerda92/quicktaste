@@ -20,7 +20,7 @@
 
         <div class="icones">
 
-            <button type="button" class="qk-btn qk-btn-princ" data-bs-toggle="tooltip" title="Carrinho">
+            <button type="button" class="qk-btn qk-btn-princ" data-bs-toggle="tooltip" title="Pedidos">
                 <i class="fa-solid fa-cart-shopping fa-fw"></i>
             </button>
 

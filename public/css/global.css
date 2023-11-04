@@ -73,9 +73,27 @@ button {
     box-shadow: 0 0 0 0.25rem var(--principal-claro);
 }
 
+.qk-btn-princ-outline:hover {
+    background-color: var(--principal);
+    color: #ffffff;
+}
+
+.qk-btn-princ-outline:focus {
+    box-shadow: 0 0 0 0.25rem var(--principal-claro);
+}
+
 .form-control:focus {
     border-color: transparent;
     box-shadow: 0 0 0 0.25rem var(--principal-claro);
+}
+
+.form-control-invalid {
+    border-color: var(--qk-vermelho);
+}
+
+.form-control-invalid:focus {
+    border-color: var(--qk-vermelho);
+    box-shadow: 0 0 0 0.25rem var(--qk-vermelho-claro);
 }
 
 .img-svg {
