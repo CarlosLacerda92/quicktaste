@@ -58,6 +58,12 @@ button {
     color: var(--qk-preto);
 }
 
+.qk-btn-princ-outline {
+    background-color: transparent;
+    border: 1px solid var(--principal);
+    color: var(--qk-preto);
+}
+
 .qk-btn-princ:hover {
     background-color: var(--principal-escuro);
 }

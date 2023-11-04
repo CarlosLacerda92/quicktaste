@@ -25,18 +25,20 @@
 
     <body>
         <div class="login-container">
+
             <div class="login-titulo">
-                <h4 class="mb-0">
-                    Logo
+                <h4 class="txt-qk-princ mb-0">
+                    <span style="font-style: italic;">Quick</span><span style="font-weight: 600;">Taste</span>
                 </h4>
-                <span>
-                    Mensagem legal aqui!
+                <span style="color: #ffffff;">
+                    Milhares de restaurantes à sua disposição!
                 </span>
             </div>
+            
             <div class="login-box">
 
                 <h3>
-                    Log In
+                    Log<span class="txt-qk-princ">in</span>
                 </h3>
                 
                 <form class="d-flex flex-column align-items-center justify-content-center gap-4" action="">
@@ -50,7 +52,7 @@
                         <span class="input-group-text">
                             <i class="fa-solid fa-lock"></i>
                         </span>
-                        <div class="position-relative">
+                        <div class="position-relative w-100">
                             <input type="text" class="form-control w-100" id="senha" name="senha" placeholder="Senha">
                             <i class="fa-regular fa-eye-slash position-absolute top-0 end-0 mt-3 me-2"></i>
                         </div>
@@ -70,6 +72,12 @@
                     </div>
                     <button type="button" id="entrar" class="qk-btn qk-btn-princ w-100 fw-bold">
                         Entrar
+                    </button>
+                    <button type="button" id="entrarGoogle" class="qk-btn qk-btn-princ-outline gap-2 w-100">
+                        <img src="/img/svg/google_logo.svg" alt="logo_google" style="aspect-ratio: 1; width: 14%;">
+                        <span>
+                            Entrar com Google
+                        </span>
                     </button>
                 </form>
                 <div class="w-100 text-start" style="font-size: 0.875rem;">
