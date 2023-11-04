@@ -7,12 +7,75 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>QuickTaste</title>
+        <title>QuickTaste | Login</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('front_end_assets/bootstrap53/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('front_end_assets/fontawesome642/css/all.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/cores.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/global.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
+
+        <script src="{{ asset('front_end_assets/bootstrap53/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('js/global.js') }}"></script>
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     </head>
 
     <body>
-        <div>
-            Login
+        <div class="login-container">
+            <div class="login-titulo">
+                <h4 class="mb-0">
+                    Logo
+                </h4>
+                <span>
+                    Mensagem legal aqui!
+                </span>
+            </div>
+            <div class="login-box">
+
+                <h3>
+                    Log In
+                </h3>
+                
+                <form class="d-flex flex-column align-items-center justify-content-center gap-4" action="">
+                    <div class="input-group w-100">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="E-mail">
+                    </div>
+                    <div class="input-group w-100">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+                        <div class="position-relative">
+                            <input type="text" class="form-control w-100" id="senha" name="senha" placeholder="Senha">
+                            <i class="fa-regular fa-eye-slash position-absolute top-0 end-0 mt-3 me-2"></i>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center w-100">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="lembrar" name="lembrar" value="1">
+                            <label class="form-check-label" for="lembrar">
+                                Lembrar de mim
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <a href="">
+                                Esqueci minha senha
+                            </a>
+                        </div>
+                    </div>
+                    <button type="button" id="entrar" class="qk-btn qk-btn-princ w-100 fw-bold">
+                        Entrar
+                    </button>
+                </form>
+                <div class="w-100 text-start" style="font-size: 0.875rem;">
+                    Novo por aqui? <a href="">Registre-se!</a>
+                </div>
+            </div>
         </div>
     </body>
 

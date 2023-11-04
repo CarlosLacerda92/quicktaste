@@ -45,6 +45,7 @@ button {
  .qk-btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0.75rem;
     border-radius: 0.5rem;
     border: none;
