@@ -21,4 +21,4 @@ Route::get('/', function () {
 
 Route::get('/bemvindo', function () {
     return view('index');
-});
+})->name('/bemvindo');

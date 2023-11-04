@@ -13,6 +13,10 @@ class AutenticacaoController extends Controller
 {
     public function autenticar(AutenticacaoRequest $request) {
 
+        /* echo '<pre>';
+        print_r($request->header('User-Agent'));
+        die; */
+
         #   Verifica se o e-mail fornecido existe na base de dados.
         $usuario = Usuario::where('email', sha1($request->email))->first();
 
@@ -37,11 +41,16 @@ class AutenticacaoController extends Controller
         $usuario->tokens()->delete();
 
         #   Passando pelas validações, um token é criado para o usuário.
-        $token = $usuario->createToken($request->nome_dispositivo)->plainTextToken;
+        $token = $usuario->createToken($request->header('User-Agent'))->plainTextToken;
 
         #   O token é retornado no formato json.
-        return response()->json([
-            'token' => $token
-        ]);
+        if (str_contains($request->header('User-Agent'), 'Thunder Client')) {
+            return response()->json([
+                'token' => $token
+            ]);
+        }
+
+        /* return redirect()->route('/bemvindo')->with('list', $list); */
+        return redirect()->route('/bemvindo');
     }
 }

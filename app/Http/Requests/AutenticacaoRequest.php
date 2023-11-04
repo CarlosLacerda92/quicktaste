@@ -30,11 +30,11 @@ class AutenticacaoRequest extends FormRequest
             'senha' => [
                 'required',
                 'max:255'
-            ],
+            ]/* ,
             'nome_dispositivo' => [
                 'required',
                 'max:255'
-            ]
+            ] */
         ];
     }
 }
