@@ -28,7 +28,7 @@ Route::post('/autenticar', [AutenticacaoController::class, 'autenticar']);
 #   Endpoints que necessitam de autenticação para serem executados.
 Route::middleware(['auth:sanctum'])->group(function() {
     #   Usuários.
-    Route::get('/exibirTodosUsuarios', [UserController::class, 'exibirTodosUsuarios']);
+    Route::get('/exibirTodosUsuarios', [UserController::class, 'exibirTodosUsuarios'])->name('exibirTodosUsuarios');
     Route::post('/criarEnderecoUsuario', [UsuarioEnderecoController::class, 'criarEnderecoUsuario']);
 
     #   Restaurantes.

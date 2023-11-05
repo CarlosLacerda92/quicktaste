@@ -25,4 +25,15 @@ class UsuarioEnderecoController extends Controller
         #   Retorna os dados do usuário cadastrado de acordo com o formato estabelecido em UsuarioResource.
         return new UsuarioEnderecoResource($usuarioEndereco); 
     }
+
+    public static function buscarEnderecoUsuario($id) {
+
+        if (!$id) {
+            return null;
+        }
+
+        $endereco = UsuarioEndereco::where('usuarios_enderecos.status', 1)->where('usuarios_enderecos.id_usuario', $id)->select('usuarios_enderecos.*')->first();
+
+        return new UsuarioEnderecoResource($endereco); 
+    }
 }

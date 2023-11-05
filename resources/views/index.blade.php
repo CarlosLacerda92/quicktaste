@@ -1,7 +1,7 @@
 
 <x-inicio />
 
-<x-cabecalho endereco="Rua Laranjeiras, 415, São Lucas" qtdNotificacoes="7" usuario="3" />
+<x-cabecalho qtdNotificacoes="7" usuario="{{ Auth::user()->id }}" />
 
 <script src="{{ asset('js/index.js') }}"></script>
     

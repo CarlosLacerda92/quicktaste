@@ -1,3 +1,14 @@
+@php
+    #   Buscando o endereço ativo do usuário.
+    $endereco = '';
+
+    $buscaEndereco = App\Http\Controllers\UsuarioEnderecoController::buscarEnderecoUsuario(Auth::user()->id);
+
+    if ($buscaEndereco->resource) {
+        $endereco = $buscaEndereco->logradouro . ', ' . $buscaEndereco->numero . ', ' . $buscaEndereco->bairro;
+    }
+@endphp
+
 <link href="{{ asset('css/components/cabecalho.css') }}" rel="stylesheet">
 
 <div class="cabecalho">
@@ -7,13 +18,22 @@
     </div>
 
    <div class="cabecalho-endereco">
-        <span>
-            Entregar em &nbsp;
-        </span>
-        <i class="fa-solid fa-location-dot"></i>
-        <span>
-            {{$endereco}}
-        </span>
+        @if ($endereco)
+            <span>
+                Entregar em &nbsp;
+            </span>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>
+                {{$endereco}}
+            </span>
+        @else
+            <span>
+                Nenhum endereço encontrado!
+            </span>
+            <span>
+                Clique aqui e faça o cadastro!
+            </span>
+        @endif
    </div>
 
     <div class="container-perfil">
@@ -29,7 +49,7 @@
                 <i class="fa-solid fa-bell fa-fw"></i>
 
                 <span class="position-absolute translate-middle badge rounded-pill bg-qk-verm" style="top: 5px; left: 40px;">
-                    {{$qtdNotificacoes}}
+                    {{ $qtdNotificacoes }}
                     <span class="visually-hidden">
                         Notificações não lidas
                     </span>
@@ -38,7 +58,7 @@
         </div>
         
         <div class="cabecalho-perfil dropdown">
-            <img class="foto-perfil" src="{{ asset('storage/fotos_perfil/id_3.png') }}" role="button" data-bs-toggle="dropdown" aria-expanded="false" />
+            <img class="foto-perfil" src="{{ asset('storage/fotos_perfil/id_' . $usuario . '.png') }}" role="button" data-bs-toggle="dropdown" aria-expanded="false" />
             <x-dropdown />
         </div>
     </div>
