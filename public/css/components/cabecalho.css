@@ -30,6 +30,7 @@
 }
 
 .cabecalho .cabecalho-perfil .foto-perfil {
+    aspect-ratio: 1;
     width: 3.5rem;
     border: 0.25rem solid var(--principal);
     border-radius: 50%;

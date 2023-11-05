@@ -27,13 +27,13 @@ Route::post('/autenticar', [AutenticacaoController::class, 'autenticar']);
 
 #   Endpoints que necessitam de autenticação para serem executados.
 Route::middleware(['auth:sanctum'])->group(function() {
+
     #   Usuários.
     Route::get('/exibirTodosUsuarios', [UserController::class, 'exibirTodosUsuarios'])->name('exibirTodosUsuarios');
     Route::post('/criarEnderecoUsuario', [UsuarioEnderecoController::class, 'criarEnderecoUsuario']);
+    Route::delete('/sair', [AutenticacaoController::class, 'sair'])->name('sair');
 
     #   Restaurantes.
     Route::post('/cadastrarRestaurante', [RestauranteController::class, 'cadastrarRestaurante']);
+    Route::post('/restaurantes', [RestauranteController::class, 'buscar']);
 });
-
-#   Rota de busca de restaurantes.  DEPOIS, ADICIONAR ESSA ROTA NAS ROTAS AUTENTICADAS!!!
-Route::post('/restaurantes', [RestauranteController::class, 'buscar']);

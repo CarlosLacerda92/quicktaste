@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\RestauranteController;
-use App\Http\Controllers\UsuarioController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\RestauranteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('login');
-});
+})->name('login');
 
 Route::get('/bemvindo', function () {
-    return view('index');
+
+    if (Auth::check()) {
+        return view('index');
+    }
+
+    return redirect()->route('login');
+    
 })->name('/bemvindo');

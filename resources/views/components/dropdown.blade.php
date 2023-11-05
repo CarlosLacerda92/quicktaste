@@ -73,9 +73,13 @@
     <li>
         <a class="dropdown-item" href="#">
             <i class="fa-solid fa-right-from-bracket fa-fw"></i>
-            <span>
-                Sair
-            </span>
+            <form action="{{ route('sair') }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="qk-btn qk-btn-princ" style="padding: 0.25rem 0.5rem;">
+                    Sair
+                </button>
+            </form>
         </a>
     </li>
 </ul>

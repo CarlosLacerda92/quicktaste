@@ -57,11 +57,6 @@ class AutenticacaoController extends Controller
             );
         }
 
-        /* echo '<pre>';
-        print_r($usuario);
-        echo '</pre>';
-        die; */
-
         if (!Auth::attempt($credenciais)) {
             if ($thunder) {
                 throw ValidationException::withMessages([
@@ -90,47 +85,10 @@ class AutenticacaoController extends Controller
         }
 
         return redirect()->route('/bemvindo');
+    }
 
-        #   Redirecionando para a página principal.
-        //return redirect()->route('/bemvindo')->with('list', $list);
-        //return redirect()->route('/bemvindo');
-
-        ///////////////////////////////////////////////////
-
-        #   Verifica se o e-mail fornecido existe na base de dados.
-        /* $usuario = Usuario::where('email', sha1($request->email))->first();
-
-        #   Se não existir, lança uma exceção com uma mensagem de erro.
-        if (!$usuario) {
-            throw ValidationException::withMessages([
-                'email' => ['O e-mail fornecido não existe!']
-            ]);
-        }
-
-        #   Verifica a senha fornecida.
-        Hash::check($request->senha, $usuario->senha);
-
-        #   Se a senha fornecida estiver incorreta, lança uma exceção com uma mensagem de erro.
-        if (!Hash::check($request->senha, $usuario->senha)) {
-            throw ValidationException::withMessages([
-                'email' => ['Senha incorreta!']
-            ]);
-        }
-
-        #   Deletando todos os tokens criados anteriormente para o usuário (login único).
-        $usuario->tokens()->delete();
-
-        #   Passando pelas validações, um token é criado para o usuário.
-        $token = $usuario->createToken($request->header('User-Agent'))->plainTextToken;
-
-        #   O token é retornado no formato json.
-        if (str_contains($request->header('User-Agent'), 'Thunder Client')) {
-            return response()->json([
-                'token' => $token
-            ]);
-        }
-
-        //return redirect()->route('/bemvindo')->with('list', $list);
-        return redirect()->route('/bemvindo'); */
+    public function sair() {
+        Auth::guard('web')->logout();
+        return redirect()->route('login');
     }
 }
