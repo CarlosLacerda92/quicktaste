@@ -16,7 +16,7 @@
             </div>
             <div class="d-flex align-items-center justify-content-between gap-2" style="font-size: 0.75rem;">
                 <div class="d-flex align-items-center gap-2">
-                    <i class="fa-solid fa-utensils"></i>
+                    <i class="fa-solid fa-bowl-food"></i>
                     <span>
                         {{$descrcategoria}}
                     </span>
