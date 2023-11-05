@@ -18,17 +18,17 @@ use App\Http\Controllers\UsuarioEnderecoController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+/* Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-});
+}); */
 
+Route::post('/registrar', [AutenticacaoController::class, 'registrar']);
 Route::post('/autenticar', [AutenticacaoController::class, 'autenticar']);
 
 #   Endpoints que necessitam de autenticação para serem executados.
 Route::middleware(['auth:sanctum'])->group(function() {
 
     #   Usuários.
-    Route::post('/criarUsuario', [UsuarioController::class, 'criarUsuario']);
     Route::get('/exibirTodosUsuarios', [UsuarioController::class, 'exibirTodosUsuarios']);
     Route::post('/criarEnderecoUsuario', [UsuarioEnderecoController::class, 'criarEnderecoUsuario']);
 
