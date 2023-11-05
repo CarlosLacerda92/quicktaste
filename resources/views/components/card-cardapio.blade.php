@@ -5,7 +5,7 @@
     <input type="hidden" name="id" value="{{$descricao}}">
     <div class="card-cardapio">
         <div style="height: 10rem; overflow: hidden;">
-            {{-- <img src="{{ asset("storage/fotos_restaurantes/id_{$id}.jpg") }}" /> --}}
+            <img src="{{ asset("storage/fotos_cardapios/id_{$idrestaurante}_{$id}.jpg") }}" />
         </div>
         <div class="card-cardapio-conteudo">
             <h6 class="card-cardapio-cabecalho mb-0">

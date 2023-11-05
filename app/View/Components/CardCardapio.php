@@ -9,6 +9,7 @@ use Illuminate\View\Component;
 class CardCardapio extends Component
 {
 
+    public $idrestaurante;
     public $id;
     public $nome;
     public $descricao;
@@ -19,8 +20,9 @@ class CardCardapio extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct($id, $nome, $descricao, $categoria, $descrcategoria, $preco)
+    public function __construct($idrestaurante, $id, $nome, $descricao, $categoria, $descrcategoria, $preco)
     {
+        $this->idrestaurante  = $idrestaurante;
         $this->id             = $id;
         $this->nome           = $nome;
         $this->descricao      = $descricao;

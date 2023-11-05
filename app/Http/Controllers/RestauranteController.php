@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\RestauranteRequest;
 use App\Http\Resources\RestauranteResource;
+use App\Models\RestauranteCardapio;
 
 class RestauranteController extends Controller
 {
@@ -56,19 +57,20 @@ class RestauranteController extends Controller
             'id' => 'required'
         ]);
 
+        #   Buscar dados do restaurante.
         $restaurante = Restaurante::where('restaurantes.status', 1)->where('restaurantes.id', $dados['id'])->join('restaurantes_categorias', 'categoria', '=', 'restaurantes_categorias.id')->select('restaurantes.*', 'restaurantes_categorias.descricao as nomecategoria')->get()->first();
 
         if ($restaurante->count() <= 0) {
             return redirect()->route('/bemvindo')->withInput();
         }
 
-        /* $restaurante = RestauranteResource::collection($restaurante); */
+        #   Buscar cardápio do restaurante.
+        $cardapio = RestauranteCardapio::where('restaurantes_cardapios.status', 1)->where('restaurantes_cardapios.id_restaurante', $dados['id'])->join('cardapios_categorias', 'categoria', '=', 'cardapios_categorias.id')->select('restaurantes_cardapios.*', 'cardapios_categorias.descricao as nomecategoria')->orderBy('restaurantes_cardapios.nome')->get();
 
-        /* echo '<pre>Aqui:';
-        print_r($restaurante);
-        echo '</pre>';
-        die; */
+        if ($cardapio->count() <= 0) {
+            $cardapio = null;
+        }
 
-        return view('restaurante', compact('restaurante'));
+        return view('restaurante', compact('restaurante', 'cardapio'));
     }
 }

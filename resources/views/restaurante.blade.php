@@ -6,8 +6,9 @@
 
 @php
     /* echo '<pre>pppppppppp';
-    print_r($restaurante);
-    echo '</pre>'; */
+    print_r($cardapio);
+    echo '</pre>';
+    die; */
 @endphp
 
 <div class="restaurante">
@@ -58,8 +59,22 @@
         <h4 class="mb-0">
             Cardápio
         </h4>
-        <div class="qk-card-grid">
-            <x-card-cardapio id="1" nome="Baião de Dois" descricao="Arroz e Feijão" categoria="2" descrcategoria="Prato principal" preco="20,99" />
+        @if ($cardapio)
+            <div class="qk-card-grid">
+                @foreach ($cardapio as $c)
+                    <x-card-cardapio :idrestaurante="$c['id_restaurante']" :id="$c['id']" :nome="$c['nome']" :descricao="$c['descricao']" :categoria="$c['categoria']" :descrcategoria="$c['nomecategoria']" :preco="$c['preco']" />
+                @endforeach
+            </div>
+        @else
+            <div class="w-100 d-flex align-items-center justify-content-center">
+                <img class="img-svg" src="{{ asset('img/svg/fast-food-flatline.svg') }}" />
+                <div class="d-flex flex-column gap-2">
+                    <span style="font-size: 1.5rem; font-weight: 600;">
+                        Este restaurante ainda não cadastrou o cardápio!
+                    </span>
+                </div>
+            </div>
+        @endif
         </div>
     </div>
 </div>
