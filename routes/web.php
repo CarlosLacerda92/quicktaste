@@ -17,6 +17,7 @@ use App\Http\Controllers\RestauranteController;
 */
 
 Route::get('/', function () {
+    Auth::guard('web')->logout();
     return view('login');
 })->name('login');
 
