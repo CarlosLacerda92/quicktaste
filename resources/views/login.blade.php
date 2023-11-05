@@ -42,7 +42,13 @@
                 <h3>
                     Log<span class="txt-qk-princ">in</span>
                 </h3>
-                
+
+                @if ($errors->has('email'))
+                    <div id="divErros" class="txt-qk-verm">
+                        {{ $errors->first('email') }}
+                    </div>
+                @endif
+
                 <form id="formlogin" class="d-flex flex-column align-items-center justify-content-center gap-4 needs-validation" method="POST" action="/api/autenticar">
                     @csrf
                     <div class="d-flex flex-column gap-1 w-100">
