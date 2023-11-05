@@ -22,6 +22,15 @@
     gap: 0.75rem;
 }
 
+.card-cardapio .card-cardapio-conteudo .descricao {
+    min-height: 3.5rem;
+    font-size: 0.75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 .card-cardapio .card-cardapio-conteudo .card-cardapio-texto {
     display: flex;
     flex-direction: column;

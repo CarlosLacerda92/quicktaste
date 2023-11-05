@@ -70,7 +70,7 @@
                 <img class="img-svg" src="{{ asset('img/svg/fast-food-flatline.svg') }}" />
                 <div class="d-flex flex-column gap-2">
                     <span style="font-size: 1.5rem; font-weight: 600;">
-                        Este restaurante ainda não cadastrou o cardápio!
+                        Este restaurante ainda não cadastrou seu cardápio!
                     </span>
                 </div>
             </div>
