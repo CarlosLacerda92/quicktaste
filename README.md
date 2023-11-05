@@ -11,4 +11,7 @@
     <p>
         Abaixo estão algumas imagens da aplicação:
     </p>
+    <img src="/public/img/jpeg/login.jpg">
+    <img src="/public/img/jpeg/bemvindo.jpg">
+    <img src="/public/img/jpeg/restaurante.jpg">
 </div>
