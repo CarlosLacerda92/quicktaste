@@ -25,6 +25,7 @@
     </head>
 
     <body>
+
         <div class="login-container">
 
             <div class="login-titulo">
@@ -60,11 +61,11 @@
                                 <i class="fa-solid fa-lock"></i>
                             </span>
                             <div class="position-relative w-100">
-                                <input type="password" class="form-control w-100" id="senha" name="senha" placeholder="Senha">
+                                <input type="password" class="form-control w-100" id="password" name="password" placeholder="Senha">
                                 <i class="fa-regular fa-eye-slash position-absolute top-0 end-0" style="margin: 0.7rem 0.7rem 0 0; cursor: pointer;" data-bs-toggle="tooltip" title="Mostrar senha"></i>
                             </div>
                         </div>
-                        <small class="txt-qk-verm d-none" data-validar="senha"></small>
+                        <small class="txt-qk-verm d-none" data-validar="password"></small>
                     </div>
 
                     <div class="d-flex align-items-center w-100">

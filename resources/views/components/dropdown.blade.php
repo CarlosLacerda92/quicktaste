@@ -3,12 +3,9 @@
 <ul class="dropdown-menu">
 
     <li class="cabecalho-dropdown">
-        <h6 class="dropdown-header pb-0">
-            Fulano de Tal
+        <h6 class="dropdown-header">
+            {{ Auth::user()->name }}
         </h6>
-        <span class="dropdown-item pt-0" style="font-size: 0.75rem;">
-            fulanodetal@gmail.com
-        </span>
     </li>
 
     <li>

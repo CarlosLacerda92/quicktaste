@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         validar(this);
     });
 
-    document.querySelectorAll('#email, #senha').forEach(function(elem) {
+    document.querySelectorAll('#email, #password').forEach(function(elem) {
         elem.addEventListener('input', function() {
             resetarCampo(elem);
         });
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 function validar(form) {
     
     const email = document.getElementById('email');
-    const senha = document.getElementById('senha');
+    const senha = document.getElementById('password');
 
     const valorEmail = email.value.trim();
     const valorSenha = senha.value.trim();

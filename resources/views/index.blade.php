@@ -9,7 +9,7 @@
     <div class="bem-vindo-overlay">
         <div class="conteudo">
             <h1 style="margin: 0;">
-                Bem-vindo, <span style="font-weight: bold; color: var(--principal);">Fulano!</span>
+                Olá, <span style="font-weight: bold; color: var(--principal);">{{ Auth::user()->name }}!</span>
             </h1>
             <h3 style="margin: 0;">
                 Como está sua fome hoje?

@@ -44,13 +44,23 @@ class AutenticacaoController extends Controller
         $usuario = User::where('email', $credenciais['email'])->first();
 
         if (!$usuario) {
-
             if ($thunder) {
                 throw ValidationException::withMessages([
                     'email' => ['O e-mail fornecido não existe!']
                 ]);
             }
+
+            return back()->withErrors(
+                [
+                    'email' => 'O e-mail fornecido não existe!'
+                ]
+            );
         }
+
+        /* echo '<pre>';
+        print_r($usuario);
+        echo '</pre>';
+        die; */
 
         if (!Auth::attempt($credenciais)) {
             if ($thunder) {
@@ -58,6 +68,12 @@ class AutenticacaoController extends Controller
                     'email' => ['Os dados informados estão incorretos!']
                 ]);
             }
+
+            return back()->withErrors(
+                [
+                    'email' => 'Os dados informados estão incorretos!'
+                ]
+            );
         }
 
         #   Deletando todos os tokens criados anteriormente para o usuário (login único).
@@ -72,6 +88,8 @@ class AutenticacaoController extends Controller
                 'token' => $token
             ]);
         }
+
+        return redirect()->route('/bemvindo');
 
         #   Redirecionando para a página principal.
         //return redirect()->route('/bemvindo')->with('list', $list);
