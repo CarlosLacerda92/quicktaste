@@ -3,7 +3,7 @@
         QuickTaste - Portal de restaurantes online
     </h1>
     <p>
-        Aplicação desenvolvida em PHP + Laravel, HTML, CSS e Javascript.
+        Aplicação desenvolvida em PHP + Laravel, HTML, CSS, Blade, Javascript e MySQL.
     </p>
     <p>
         O objetivo deste projeto é a construção de um MVP de um portal de busca de restaurantes, onde é possível visualizar os estabelecimentos e os itens dos seus cardápios.
