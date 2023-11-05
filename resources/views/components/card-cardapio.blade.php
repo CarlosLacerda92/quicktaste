@@ -11,7 +11,7 @@
             <h6 class="card-cardapio-cabecalho mb-0">
                 {{$nome}}
             </h6>
-            <div class="descricao">
+            <div class="descricao" title="{{$descricao}}">
                 {{$descricao}}
             </div>
             <div class="d-flex align-items-center justify-content-between gap-2" style="font-size: 0.75rem;">
