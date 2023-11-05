@@ -4,13 +4,6 @@
 
 <x-cabecalho qtdNotificacoes="7" usuario="{{ Auth::user()->id }}" />
 
-@php
-    /* echo '<pre>pppppppppp';
-    print_r($cardapio);
-    echo '</pre>';
-    die; */
-@endphp
-
 <div class="restaurante">
 
     <div class="div-banner-rest" style="background-image: url({{ asset('storage/fotos_restaurantes/id_' . $restaurante->id . '.jpg') }});">
@@ -49,8 +42,12 @@
             </div>
         </div>
 
-        <div class="d-flex align-items-center gap-3 position-absolute bottom-0 end-0 mb-3 me-3" style="font-size: 0.875rem;">
-            {{ $restaurante->logradouro }}, {{ $restaurante->numero }}, {{ $restaurante->bairro }} | {{ $restaurante->cidade }} - {{ $restaurante->estado }}
+        <div class="d-flex align-items-center gap-2 position-absolute bottom-0 end-0 mb-3 me-3" style="font-size: 0.875rem;">
+            {{ $restaurante->logradouro }}, {{ $restaurante->numero }}, {{ $restaurante->bairro }} | {{ $restaurante->cidade }} - {{ $restaurante->estado }} |
+            @if ($restaurante->whatsapp)
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.125rem;"></i>
+            @endif
+            {{ $restaurante->telefone }}
         </div>
 
     </div>

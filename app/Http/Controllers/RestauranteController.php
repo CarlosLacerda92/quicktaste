@@ -83,6 +83,13 @@ class RestauranteController extends Controller
             return redirect()->route('/bemvindo')->withInput();
         }
 
+        $restaurante->telefone = '(' . substr($restaurante->telefone, 0, 2) . ') ' . substr($restaurante->telefone, 2, -4).'-' . substr($restaurante->telefone, -4);
+
+        /* echo '<pre>';
+        print_r($restaurante->telefone);
+        echo '<pre>';
+        die; */
+
         #   Buscar cardápio do restaurante.
         $cardapio = RestauranteCardapio::where('restaurantes_cardapios.status', 1)->where('restaurantes_cardapios.id_restaurante', $dados['id'])->join('cardapios_categorias', 'categoria', '=', 'cardapios_categorias.id')->select('restaurantes_cardapios.*', 'cardapios_categorias.descricao as nomecategoria')->orderBy('restaurantes_cardapios.nome')->get();
 
