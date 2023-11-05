@@ -2,10 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\RestauranteController;
 use App\Http\Controllers\AutenticacaoController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsuarioEnderecoController;
+use App\Http\Controllers\RestauranteCardapioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,4 +37,7 @@ Route::middleware(['auth:sanctum'])->group(function() {
     #   Restaurantes.
     Route::post('/cadastrarRestaurante', [RestauranteController::class, 'cadastrarRestaurante']);
     Route::post('/restaurantes', [RestauranteController::class, 'buscar']);
+
+    #   Cardápios.
+    Route::post('/criarPrato', [RestauranteCardapioController::class, 'criarPrato']);
 });
