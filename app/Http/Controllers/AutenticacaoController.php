@@ -35,17 +35,29 @@ class AutenticacaoController extends Controller
 
     public function autenticar(AutenticacaoRequest $request) {
 
+        #   Identificando qual a origem da requisição, para redirecionamento.
+        $thunder = str_contains($request->header('User-Agent'), 'Thunder Client');
+
         $credenciais          = $request->validated();
         $credenciais['email'] = md5($credenciais['email']);
 
         $usuario = User::where('email', $credenciais['email'])->first();
 
         if (!$usuario) {
-            //  E-mail incorreto ou não existe.
+
+            if ($thunder) {
+                throw ValidationException::withMessages([
+                    'email' => ['O e-mail fornecido não existe!']
+                ]);
+            }
         }
 
         if (!Auth::attempt($credenciais)) {
-            //  Senha incorreta.
+            if ($thunder) {
+                throw ValidationException::withMessages([
+                    'email' => ['Os dados informados estão incorretos!']
+                ]);
+            }
         }
 
         #   Deletando todos os tokens criados anteriormente para o usuário (login único).
@@ -55,7 +67,7 @@ class AutenticacaoController extends Controller
         $token = $usuario->createToken(md5($usuario->email))->plainTextToken;
 
         #   O token é retornado no formato json quando a chamada for feita via Thunder Client.
-        if (str_contains($request->header('User-Agent'), 'Thunder Client')) {
+        if ($thunder) {
             return response()->json([
                 'token' => $token
             ]);
