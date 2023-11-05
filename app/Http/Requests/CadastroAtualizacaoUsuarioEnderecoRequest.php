@@ -25,7 +25,7 @@ class CadastroAtualizacaoUsuarioEnderecoRequest extends FormRequest
             'id_usuario' => [
                 'required',
                 'max:20',
-                'exists:usuarios,id'
+                'exists:users,id'
             ],
             'cep' => [
                 'required',

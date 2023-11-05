@@ -2,9 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\RestauranteController;
 use App\Http\Controllers\AutenticacaoController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsuarioEnderecoController;
 
 /*
@@ -27,9 +27,8 @@ Route::post('/autenticar', [AutenticacaoController::class, 'autenticar']);
 
 #   Endpoints que necessitam de autenticação para serem executados.
 Route::middleware(['auth:sanctum'])->group(function() {
-
     #   Usuários.
-    Route::get('/exibirTodosUsuarios', [UsuarioController::class, 'exibirTodosUsuarios']);
+    Route::get('/exibirTodosUsuarios', [UserController::class, 'exibirTodosUsuarios']);
     Route::post('/criarEnderecoUsuario', [UsuarioEnderecoController::class, 'criarEnderecoUsuario']);
 
     #   Restaurantes.
