@@ -49,14 +49,17 @@
         </div>
 
         <div class="d-flex align-items-center gap-3 position-absolute bottom-0 end-0 mb-3 me-3" style="font-size: 0.875rem;">
-            {{ $restaurante->logradouro }}, {{ $restaurante->numero }}, {{ $restaurante->bairro }}
+            {{ $restaurante->logradouro }}, {{ $restaurante->numero }}, {{ $restaurante->bairro }} | {{ $restaurante->cidade }} - {{ $restaurante->estado }}
         </div>
 
     </div>
 
-    <div style="padding: 2rem;">
-        <h4>
+    <div class="flex-column d-flex" style="padding: 2rem; gap: 2rem;">
+        <h4 class="mb-0">
             Cardápio
         </h4>
+        <div class="qk-card-grid">
+            <x-card-cardapio id="1" nome="Baião de Dois" descricao="Arroz e Feijão" categoria="2" descrcategoria="Prato principal" preco="20,99" />
+        </div>
     </div>
 </div>
