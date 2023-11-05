@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Restaurante;
 use Illuminate\Http\Request;
+use App\Models\RestauranteCardapio;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\RestauranteRequest;
+use Illuminate\Database\Eloquent\Builder;
 use App\Http\Resources\RestauranteResource;
-use App\Models\RestauranteCardapio;
 
 class RestauranteController extends Controller
 {
@@ -30,10 +31,28 @@ class RestauranteController extends Controller
 
         #   Buscando os restaurantes.
         if ($texto) {
-            $restaurantes = Restaurante::where('restaurantes.status', 1)->join('restaurantes_categorias', 'categoria', '=', 'restaurantes_categorias.id')->select('restaurantes.*', 'restaurantes_categorias.descricao as nomecategoria')->where('nome', 'like', "%{$texto}%")->orderBy('nome')->get();
+            $restaurantes = Restaurante::where('restaurantes.status', 1)
+            ->join('restaurantes_categorias', 'categoria', '=', 'restaurantes_categorias.id')
+            ->leftJoin('restaurantes_cardapios', 'restaurantes.id', '=', 'restaurantes_cardapios.id_restaurante')
+            ->select('restaurantes.*', 'restaurantes_categorias.descricao as nomecategoria')
+            /* ->where('restaurantes.nome', 'like', "%{$texto}%") */
+            ->where(function(Builder $query) use ($texto) {
+                $query->where('restaurantes.nome', 'like', "%{$texto}%")
+                      ->orWhere('restaurantes_cardapios.nome', 'like', "%{$texto}%")
+                      ->orWhere('restaurantes_cardapios.descricao', 'like', "%{$texto}%");;
+            })
+            ->distinct()
+            ->orderBy('nome')
+            ->get();
         }
         else {
-            $restaurantes = Restaurante::where('restaurantes.status', 1)->join('restaurantes_categorias', 'categoria', '=', 'restaurantes_categorias.id')->select('restaurantes.*', 'restaurantes_categorias.descricao as nomecategoria')->orderBy('nome')->get();
+            $restaurantes = Restaurante::where('restaurantes.status', 1)
+            ->join('restaurantes_categorias', 'categoria', '=', 'restaurantes_categorias.id')
+            ->leftJoin('restaurantes_cardapios', 'restaurantes.id', '=', 'restaurantes_cardapios.id_restaurante')
+            ->select('restaurantes.*', 'restaurantes_categorias.descricao as nomecategoria')
+            ->distinct()
+            ->orderBy('nome')
+            ->get();
         }
 
         if ($restaurantes->isEmpty()) {
