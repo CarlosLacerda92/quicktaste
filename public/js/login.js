@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
         validar(this);
     });
 
+    document.getElementById('passwordEye').addEventListener('click', function(e) {
+        exibirSenha(this);
+    });
+
     document.querySelectorAll('#email, #password').forEach(function(elem) {
         elem.addEventListener('input', function() {
             resetarCampo(elem);
@@ -53,4 +57,20 @@ function campoInvalido(campo, msg) {
     erro.classList.remove('d-none');
 
     campo.focus();
+}
+
+function exibirSenha(elem) {
+
+    let input = elem.previousElementSibling;
+    
+    if (input.type === 'password') {
+        input.type = 'text';
+        elem.classList.remove('fa-eye-slash');
+        elem.classList.add('fa-eye');
+    }
+    else {
+        input.type = 'password';
+        elem.classList.remove('fa-eye');
+        elem.classList.add('fa-eye-slash');
+    }
 }

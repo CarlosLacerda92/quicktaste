@@ -68,7 +68,7 @@
                             </span>
                             <div class="position-relative w-100">
                                 <input type="password" class="form-control w-100" id="password" name="password" placeholder="Senha">
-                                <i class="fa-regular fa-eye-slash position-absolute top-0 end-0" style="margin: 0.7rem 0.7rem 0 0; cursor: pointer;" data-bs-toggle="tooltip" title="Mostrar senha"></i>
+                                <i class="fa-regular fa-eye-slash position-absolute top-0 end-0" id="passwordEye" style="margin: 0.7rem 0.7rem 0 0; cursor: pointer;" data-bs-toggle="tooltip" title="Mostrar senha"></i>
                             </div>
                         </div>
                         <small class="txt-qk-verm d-none" data-validar="password"></small>
