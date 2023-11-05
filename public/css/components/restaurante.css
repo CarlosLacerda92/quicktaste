@@ -1,0 +1,27 @@
+.div-banner-rest {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #00000094;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.div-banner-rest .banner-rest-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2.5rem;
+    background-color: #00000094;
+}
+
+.div-banner-rest .banner-rest-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

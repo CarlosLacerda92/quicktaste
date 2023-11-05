@@ -30,3 +30,15 @@ Route::get('/bemvindo', function () {
     return redirect()->route('login');
     
 })->name('/bemvindo');
+
+Route::post('/restaurante', [RestauranteController::class, 'buscarDadosRestaurante'])->name('/restaurante');
+
+/* Route::get('/restaurante', function () {
+
+    if (Auth::check()) {
+        return view('restaurante');
+    }
+
+    return redirect()->route('login');
+    
+})->name('/restaurante'); */

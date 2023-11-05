@@ -21,7 +21,7 @@ class RestauranteResource extends JsonResource
             'cep'           => $this->cep,
             'logradouro'    => $this->logradouro,
             'bairro'        => $this->bairro,
-            'numero'        => $this->nome,
+            'numero'        => $this->numero,
             'cidade'        => $this->cidade,
             'estado'        => $this->estado,
             'telefone'      => $this->telefone,
