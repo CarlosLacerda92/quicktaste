@@ -8,6 +8,7 @@
     position: sticky;
     top: 0;
     z-index: 1;
+    gap: 2rem;
 }
 
 .cabecalho .logo {
@@ -56,3 +57,41 @@
     background-color: var(--principal);
     transition: background-color .15s ease-in-out;
 } */
+
+/******** Responsividade ********/
+@media (max-width: 576px) {
+
+    div.cabecalho {
+        padding: 1rem;
+    }
+
+    div.cabecalho div.cabecalho-endereco,
+    div.cabecalho div.container-perfil div.icones {
+        display: none !important;
+    }
+
+    div.div-cardapio h4 {
+        text-align: center;
+    }
+
+    div.div-cardapio div.div-sem-cardapio {
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    div.div-cardapio div.div-sem-cardapio div {
+        text-align: center;
+    }
+
+    div.div-cardapio div.div-sem-cardapio .img-svg {
+        width: 75%;
+    }
+
+    div#resultadoBusca div[data-carregando] div {
+        display: none !important;
+    }
+
+    div.div-dados-mobile {
+        display: flex;
+    }
+}

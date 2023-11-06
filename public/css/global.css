@@ -128,3 +128,43 @@ button {
     flex-direction: column;
     justify-content: center;
 }
+
+/******** Responsividade ********/
+@media (max-width: 576px) {
+
+    .bem-vindo-overlay .conteudo {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .bem-vindo-overlay .conteudo h3 {
+        text-align: center;
+    }
+
+    #formBuscaRestaurantes #div_busca {
+        width: 100% !important;
+    }
+
+    div#resultadoBusca div[data-inicio],
+    div#resultadoBusca div[data-naoencontrado],
+    div#resultadoBusca div[data-carregando] {
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    div#resultadoBusca div[data-inicio] span,
+    div#resultadoBusca div[data-naoencontrado] span {
+        text-align: center;
+    }
+
+    div#resultadoBusca div[data-inicio] .img-svg,
+    div#resultadoBusca div[data-naoencontrado] .img-svg {
+        width: 75%;
+    }
+
+    div#resultadoBusca div[data-carregando] div {
+        display: none !important;
+    }
+}

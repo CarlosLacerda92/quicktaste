@@ -16,8 +16,7 @@
             </h3>
         </div>
         <form id="formBuscaRestaurantes">
-            <div class="input-group w-50">
-            
+            <div id="div_busca" class="input-group w-50">
                 <input type="text" id="inputBusca" name="inputBusca" class="form-control" placeholder="Descubra pratos, restaurantes e mais!" />
                 @csrf
                 <button type="button" id="btnBusca" class="qk-btn qk-btn-princ">

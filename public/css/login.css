@@ -57,3 +57,20 @@ body:before {
     background-color: #ffffff;
     padding: 2rem;
 }
+
+/******** Responsividade ********/
+@media (max-width: 576px) {
+
+    body:before {
+        height: 140vh;
+    }
+
+    .login-container {
+        margin: 2rem;
+    }
+
+    .div-lembrar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

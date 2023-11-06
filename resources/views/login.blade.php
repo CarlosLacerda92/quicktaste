@@ -32,7 +32,7 @@
                 <h4 class="txt-qk-princ mb-0">
                     <span style="font-style: italic;">Quick</span><span style="font-weight: 600;">Taste</span>
                 </h4>
-                <span style="color: #ffffff;">
+                <span class="text-center" style="color: #ffffff;">
                     Milhares de restaurantes à sua disposição!
                 </span>
             </div>
@@ -74,14 +74,14 @@
                         <small class="txt-qk-verm d-none" data-validar="password"></small>
                     </div>
 
-                    <div class="d-flex align-items-center w-100">
-                        <div class="form-check">
+                    <div class="div-lembrar d-flex align-items-center w-100">
+                        <div class="form-check mb-0">
                             <input type="checkbox" class="form-check-input" id="lembrar" name="lembrar" value="1">
                             <label class="form-check-label" for="lembrar">
                                 Lembrar de mim
                             </label>
                         </div>
-                        <div class="form-check">
+                        <div class="form-check mb-0">
                             <a href="">
                                 Esqueci minha senha
                             </a>

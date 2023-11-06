@@ -8,8 +8,8 @@
 
     <div class="div-banner-rest" style="background-image: url({{ asset('storage/fotos_restaurantes/id_' . $restaurante->id . '.jpg') }});">
         
-        <div class="d-flex align-items-center gap-3 position-absolute top-0 end-0 mt-3 me-3">
-            <div>
+        <div class="dados-topo d-flex align-items-center gap-3 position-absolute top-0 end-0 mt-3 me-3">
+            <div class="nota">
                 @for ($i = 1; $i <= 5; $i++)
                     <i class="fa-solid fa-star {{ $i <= (int)$restaurante->nota ? "txt-qk-princ" : "txt-qk-cinza-claro" }}"></i>
                 @endfor
@@ -42,17 +42,56 @@
             </div>
         </div>
 
-        <div class="d-flex align-items-center gap-2 position-absolute bottom-0 end-0 mb-3 me-3" style="font-size: 0.875rem;">
-            {{ $restaurante->logradouro }}, {{ $restaurante->numero }}, {{ $restaurante->bairro }} | {{ $restaurante->cidade }} - {{ $restaurante->estado }} |
-            @if ($restaurante->whatsapp)
-                <i class="fa-brands fa-whatsapp" style="font-size: 1.125rem;"></i>
-            @endif
-            {{ $restaurante->telefone }}
+        <div class="dados-bottom d-flex align-items-center gap-2 position-absolute bottom-0 end-0 mb-3 me-3" style="font-size: 0.875rem;">
+            <span>
+                {{ $restaurante->logradouro }}, {{ $restaurante->numero }}, {{ $restaurante->bairro }} | {{ $restaurante->cidade }} - {{ $restaurante->estado }} |
+            </span>
+            <span>
+                @if ($restaurante->whatsapp)
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.125rem;"></i>
+                @endif
+                {{ $restaurante->telefone }}
+            </span>
         </div>
-
     </div>
 
-    <div class="flex-column d-flex" style="padding: 2rem; gap: 2rem;">
+    <div class="div-dados-mobile">
+        <div class="d-flex justify-content-center align-items-center gap-3">
+            <div class="nota">
+                @for ($i = 1; $i <= 5; $i++)
+                    <i class="fa-solid fa-star {{ $i <= (int)$restaurante->nota ? "txt-qk-princ" : "txt-qk-cinza-claro" }}"></i>
+                @endfor
+                <span class="txt-qk-princ">
+                    <strong>{{ $restaurante->nota }}</strong>
+                </span>
+            </div>
+            <div>
+                <i class="fa-solid fa-clock"></i>
+                <span>
+                    {{ $restaurante->tempo_entrega }}min
+                </span>
+            </div>
+            <div>
+                <i class="fa-solid fa-money-bill"></i>
+                <span>
+                    R${{ $restaurante->taxa_entrega }}
+                </span>
+            </div>
+        </div>
+        <div class="d-flex flex-column justify-content-center align-items-center gap-2" style="font-size: 0.875rem;">
+            <span>
+                {{ $restaurante->logradouro }}, {{ $restaurante->numero }}, {{ $restaurante->bairro }} | {{ $restaurante->cidade }} - {{ $restaurante->estado }}
+            </span>
+            <span>
+                @if ($restaurante->whatsapp)
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.125rem;"></i>
+                @endif
+                {{ $restaurante->telefone }}
+            </span>
+        </div>
+    </div>
+
+    <div class="div-cardapio flex-column d-flex">
         <h4 class="mb-0">
             Cardápio
         </h4>
@@ -63,7 +102,7 @@
                 @endforeach
             </div>
         @else
-            <div class="w-100 d-flex align-items-center justify-content-center">
+            <div class="div-sem-cardapio w-100 d-flex align-items-center justify-content-center">
                 <img class="img-svg" src="{{ asset('img/svg/fast-food-flatline.svg') }}" />
                 <div class="d-flex flex-column gap-2">
                     <span style="font-size: 1.5rem; font-weight: 600;">

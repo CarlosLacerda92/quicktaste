@@ -31,3 +31,56 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 2rem;
 }
+
+.div-cardapio {
+    padding: 2rem;
+    gap: 2rem;
+}
+
+div.div-banner-rest div.dados-topo,
+div.div-banner-rest div.dados-bottom {
+    font-size: 0.875rem;
+}
+
+div.div-dados-mobile {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/******** Responsividade ********/
+@media (max-width: 576px) {
+
+    div.div-banner-rest div.dados-topo,
+    div.div-banner-rest div.dados-bottom {
+        display: none !important;
+    }
+
+    div.div-cardapio h4 {
+        text-align: center;
+    }
+
+    div.div-cardapio div.div-sem-cardapio {
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    div.div-cardapio div.div-sem-cardapio div {
+        text-align: center;
+    }
+
+    div.div-cardapio div.div-sem-cardapio .img-svg {
+        width: 75%;
+    }
+
+    div#resultadoBusca div[data-carregando] div {
+        display: none !important;
+    }
+
+    div.div-dados-mobile {
+        display: flex;
+    }
+}
